@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8768E7D51D52602C00C19B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8768E7D41D52602C00C19B19 /* AppDelegate.swift */; };
+		8768E7D71D52602C00C19B19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8768E7D61D52602C00C19B19 /* ViewController.swift */; };
+		8768E7DA1D52602C00C19B19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8768E7D81D52602C00C19B19 /* Main.storyboard */; };
+		8768E7DC1D52602C00C19B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8768E7DB1D52602C00C19B19 /* Assets.xcassets */; };
+		8768E7DF1D52602C00C19B19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8768E7DD1D52602C00C19B19 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8768E7D11D52602C00C19B19 /* AlencarLucas_CE02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlencarLucas_CE02.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8768E7D41D52602C00C19B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8768E7D61D52602C00C19B19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8768E7D91D52602C00C19B19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8768E7DB1D52602C00C19B19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8768E7DE1D52602C00C19B19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8768E7E01D52602C00C19B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8768E7CE1D52602C00C19B19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8768E7C81D52602C00C19B19 = {
+			isa = PBXGroup;
+			children = (
+				8768E7D31D52602C00C19B19 /* AlencarLucas_CE02 */,
+				8768E7D21D52602C00C19B19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8768E7D21D52602C00C19B19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8768E7D11D52602C00C19B19 /* AlencarLucas_CE02.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8768E7D31D52602C00C19B19 /* AlencarLucas_CE02 */ = {
+			isa = PBXGroup;
+			children = (
+				8768E7D41D52602C00C19B19 /* AppDelegate.swift */,
+				8768E7D61D52602C00C19B19 /* ViewController.swift */,
+				8768E7D81D52602C00C19B19 /* Main.storyboard */,
+				8768E7DB1D52602C00C19B19 /* Assets.xcassets */,
+				8768E7DD1D52602C00C19B19 /* LaunchScreen.storyboard */,
+				8768E7E01D52602C00C19B19 /* Info.plist */,
+			);
+			path = AlencarLucas_CE02;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8768E7D01D52602C00C19B19 /* AlencarLucas_CE02 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8768E7E31D52602C00C19B19 /* Build configuration list for PBXNativeTarget "AlencarLucas_CE02" */;
+			buildPhases = (
+				8768E7CD1D52602C00C19B19 /* Sources */,
+				8768E7CE1D52602C00C19B19 /* Frameworks */,
+				8768E7CF1D52602C00C19B19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlencarLucas_CE02;
+			productName = AlencarLucas_CE02;
+			productReference = 8768E7D11D52602C00C19B19 /* AlencarLucas_CE02.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8768E7C91D52602C00C19B19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Lucas Alencar";
+				TargetAttributes = {
+					8768E7D01D52602C00C19B19 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = V73JQURB3H;
+					};
+				};
+			};
+			buildConfigurationList = 8768E7CC1D52602C00C19B19 /* Build configuration list for PBXProject "AlencarLucas_CE02" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8768E7C81D52602C00C19B19;
+			productRefGroup = 8768E7D21D52602C00C19B19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8768E7D01D52602C00C19B19 /* AlencarLucas_CE02 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8768E7CF1D52602C00C19B19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8768E7DF1D52602C00C19B19 /* LaunchScreen.storyboard in Resources */,
+				8768E7DC1D52602C00C19B19 /* Assets.xcassets in Resources */,
+				8768E7DA1D52602C00C19B19 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8768E7CD1D52602C00C19B19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8768E7D71D52602C00C19B19 /* ViewController.swift in Sources */,
+				8768E7D51D52602C00C19B19 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8768E7D81D52602C00C19B19 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8768E7D91D52602C00C19B19 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8768E7DD1D52602C00C19B19 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8768E7DE1D52602C00C19B19 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8768E7E11D52602C00C19B19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8768E7E21D52602C00C19B19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8768E7E41D52602C00C19B19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AlencarLucas_CE02/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.projects.lucasalencar.AlencarLucas-CE02";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8768E7E51D52602C00C19B19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AlencarLucas_CE02/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.projects.lucasalencar.AlencarLucas-CE02";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8768E7CC1D52602C00C19B19 /* Build configuration list for PBXProject "AlencarLucas_CE02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8768E7E11D52602C00C19B19 /* Debug */,
+				8768E7E21D52602C00C19B19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8768E7E31D52602C00C19B19 /* Build configuration list for PBXNativeTarget "AlencarLucas_CE02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8768E7E41D52602C00C19B19 /* Debug */,
+				8768E7E51D52602C00C19B19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8768E7C91D52602C00C19B19 /* Project object */;
+}
