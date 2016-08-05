@@ -76,14 +76,23 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pri-wB-tdX" userLabel="Red Slider">
                                         <rect key="frame" x="28" y="22" width="538" height="31"/>
                                         <color key="tintColor" red="0.90196078431372551" green="0.31372549019607843" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="7.5" y="27" width="165" height="31"/>
+                                        </variation>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qh0-0m-v5L" userLabel="Green Slider">
                                         <rect key="frame" x="28" y="60" width="538" height="31"/>
                                         <color key="tintColor" red="0.25490196078431371" green="0.66666666666666663" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="7.5" y="65" width="165" height="31"/>
+                                        </variation>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="owC-uR-2Gq" userLabel="Blue Slider">
                                         <rect key="frame" x="28" y="98" width="538" height="31"/>
                                         <color key="tintColor" red="0.0" green="0.39215686274509803" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="7.5" y="103" width="165" height="31"/>
+                                        </variation>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.050000000000000003" alpha="1" colorSpace="calibratedWhite"/>
@@ -374,8 +383,6 @@
                                         <exclude reference="hcw-rX-cIe"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="Kzy-rY-vG5"/>
-                                        <exclude reference="YPs-Vp-6Jp"/>
                                         <exclude reference="95Q-CC-l0a"/>
                                         <exclude reference="BV2-14-wmf"/>
                                         <exclude reference="FGn-v3-ozy"/>
@@ -383,6 +390,8 @@
                                         <exclude reference="GRu-9s-BXV"/>
                                         <exclude reference="VWw-7s-Y5R"/>
                                         <exclude reference="Z6q-X7-MeQ"/>
+                                        <exclude reference="Kzy-rY-vG5"/>
+                                        <exclude reference="YPs-Vp-6Jp"/>
                                         <exclude reference="5fV-Rb-QRI"/>
                                         <exclude reference="NIS-lb-RMt"/>
                                         <exclude reference="kyc-FR-eor"/>
@@ -396,8 +405,6 @@
                                         <include reference="hcw-rX-cIe"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="Kzy-rY-vG5"/>
-                                        <include reference="YPs-Vp-6Jp"/>
                                         <include reference="95Q-CC-l0a"/>
                                         <include reference="BV2-14-wmf"/>
                                         <include reference="FGn-v3-ozy"/>
@@ -405,6 +412,8 @@
                                         <include reference="GRu-9s-BXV"/>
                                         <include reference="VWw-7s-Y5R"/>
                                         <include reference="Z6q-X7-MeQ"/>
+                                        <include reference="Kzy-rY-vG5"/>
+                                        <include reference="YPs-Vp-6Jp"/>
                                         <include reference="5fV-Rb-QRI"/>
                                         <include reference="NIS-lb-RMt"/>
                                         <include reference="kyc-FR-eor"/>
@@ -446,16 +455,16 @@
                                 <exclude reference="Eqi-6y-eyL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="B5c-DQ-d5O"/>
-                                <exclude reference="2Yp-ai-Hmo"/>
-                                <exclude reference="ckU-Bg-OAf"/>
-                                <exclude reference="oV0-Gh-iYP"/>
                                 <exclude reference="BNX-Zn-1W1"/>
                                 <exclude reference="Jqv-cx-gvO"/>
                                 <exclude reference="Jy9-p4-Azf"/>
+                                <exclude reference="B5c-DQ-d5O"/>
+                                <exclude reference="ckU-Bg-OAf"/>
+                                <exclude reference="oV0-Gh-iYP"/>
                                 <exclude reference="11A-Sz-uQR"/>
                                 <exclude reference="98E-Oq-rhQ"/>
                                 <exclude reference="ipo-yE-qfe"/>
+                                <exclude reference="2Yp-ai-Hmo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -464,6 +473,9 @@
                                 <include reference="Eqi-6y-eyL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="BNX-Zn-1W1"/>
+                                <include reference="Jqv-cx-gvO"/>
+                                <include reference="Jy9-p4-Azf"/>
                                 <exclude reference="C2E-o9-G3n"/>
                                 <exclude reference="Cdc-97-IoU"/>
                                 <exclude reference="W8k-Hc-Sd8"/>
@@ -471,19 +483,16 @@
                                 <exclude reference="1HU-1R-FZT"/>
                                 <include reference="B5c-DQ-d5O"/>
                                 <exclude reference="WHn-mp-7XS"/>
-                                <include reference="2Yp-ai-Hmo"/>
                                 <exclude reference="LaM-3a-Tkd"/>
                                 <include reference="ckU-Bg-OAf"/>
                                 <include reference="oV0-Gh-iYP"/>
                                 <exclude reference="yFa-b7-9Zt"/>
-                                <include reference="BNX-Zn-1W1"/>
-                                <include reference="Jqv-cx-gvO"/>
-                                <include reference="Jy9-p4-Azf"/>
                                 <include reference="11A-Sz-uQR"/>
                                 <exclude reference="18T-NP-KQh"/>
                                 <include reference="98E-Oq-rhQ"/>
                                 <exclude reference="cop-Wf-Gcx"/>
                                 <include reference="ipo-yE-qfe"/>
+                                <include reference="2Yp-ai-Hmo"/>
                             </mask>
                         </variation>
                     </view>
