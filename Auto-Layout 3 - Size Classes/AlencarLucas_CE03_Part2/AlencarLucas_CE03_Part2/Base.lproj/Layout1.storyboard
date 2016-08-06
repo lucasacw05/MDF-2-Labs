@@ -142,14 +142,14 @@
                                                 <exclude reference="zot-37-Qr9"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="cw6-Dt-W19"/>
+                                                <exclude reference="1o0-nA-yfH"/>
+                                                <exclude reference="vPa-En-NaT"/>
+                                                <exclude reference="zf4-6A-iHu"/>
                                                 <exclude reference="JDS-gx-aBb"/>
                                                 <exclude reference="Sh8-2h-tlp"/>
                                                 <exclude reference="Xh8-il-3TX"/>
                                                 <exclude reference="cJC-g1-sAj"/>
-                                                <exclude reference="1o0-nA-yfH"/>
-                                                <exclude reference="vPa-En-NaT"/>
-                                                <exclude reference="zf4-6A-iHu"/>
-                                                <exclude reference="cw6-Dt-W19"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact">
@@ -157,18 +157,18 @@
                                                 <include reference="zot-37-Qr9"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="JDS-gx-aBb"/>
-                                                <include reference="Sh8-2h-tlp"/>
-                                                <include reference="Xh8-il-3TX"/>
-                                                <include reference="cJC-g1-sAj"/>
+                                                <exclude reference="SBK-GK-wiR"/>
+                                                <include reference="cw6-Dt-W19"/>
                                                 <include reference="1o0-nA-yfH"/>
                                                 <exclude reference="4dz-Uj-7fU"/>
                                                 <exclude reference="B6j-AY-XWr"/>
                                                 <include reference="vPa-En-NaT"/>
                                                 <exclude reference="xkz-82-3tx"/>
                                                 <include reference="zf4-6A-iHu"/>
-                                                <exclude reference="SBK-GK-wiR"/>
-                                                <include reference="cw6-Dt-W19"/>
+                                                <include reference="JDS-gx-aBb"/>
+                                                <include reference="Sh8-2h-tlp"/>
+                                                <include reference="Xh8-il-3TX"/>
+                                                <include reference="cJC-g1-sAj"/>
                                             </mask>
                                         </variation>
                                     </view>

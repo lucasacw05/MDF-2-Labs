@@ -106,10 +106,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="7Hf-YD-EYP"/>
-                                        <exclude reference="Ktl-9L-hmh"/>
-                                        <exclude reference="QZ4-vz-MKr"/>
-                                        <exclude reference="gAs-8x-VSc"/>
-                                        <exclude reference="Axp-KQ-QwQ"/>
                                         <include reference="3ds-0J-p3K"/>
                                         <include reference="Lxp-C3-DcO"/>
                                         <include reference="Tyd-VN-xzy"/>
@@ -118,6 +114,10 @@
                                         <include reference="ctE-Zu-x0r"/>
                                         <include reference="n68-yG-iw0"/>
                                         <include reference="s59-3p-BXz"/>
+                                        <exclude reference="Ktl-9L-hmh"/>
+                                        <exclude reference="QZ4-vz-MKr"/>
+                                        <exclude reference="gAs-8x-VSc"/>
+                                        <exclude reference="Axp-KQ-QwQ"/>
                                     </mask>
                                 </variation>
                             </view>
