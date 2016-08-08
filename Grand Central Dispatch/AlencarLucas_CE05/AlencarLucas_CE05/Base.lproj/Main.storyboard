@@ -28,7 +28,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Txu-ly-XXO" firstAttribute="width" secondItem="XNb-na-llH" secondAttribute="width" id="6pa-Hv-lQi"/>
                                             <constraint firstItem="Txu-ly-XXO" firstAttribute="height" secondItem="XNb-na-llH" secondAttribute="height" id="6sw-Jg-ECw"/>
@@ -49,7 +49,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="8Ug-kt-9rE" firstAttribute="top" secondItem="Qfd-HO-RWM" secondAttribute="top" id="DJJ-1W-UVx"/>
                                             <constraint firstAttribute="trailing" secondItem="8Ug-kt-9rE" secondAttribute="trailing" id="PeB-DR-MPF"/>
@@ -64,7 +64,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="a17-dT-Ofp" firstAttribute="top" secondItem="BGt-ve-0TG" secondAttribute="top" id="1kN-oW-Ttu"/>
                                             <constraint firstAttribute="trailing" secondItem="a17-dT-Ofp" secondAttribute="trailing" id="Tuu-f2-FzZ"/>
@@ -79,7 +79,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="m6S-xM-Whw" firstAttribute="leading" secondItem="Nd1-3w-jIy" secondAttribute="leading" id="1T5-Ir-aNG"/>
                                             <constraint firstItem="m6S-xM-Whw" firstAttribute="top" secondItem="Nd1-3w-jIy" secondAttribute="top" id="DI7-jq-RZS"/>
@@ -94,7 +94,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="6g8-l8-PEx" secondAttribute="bottom" id="JbF-bR-rtE"/>
                                             <constraint firstItem="6g8-l8-PEx" firstAttribute="leading" secondItem="N7O-R1-X6u" secondAttribute="leading" id="OEU-0f-gU2"/>
@@ -109,7 +109,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="yMK-JR-cyL" secondAttribute="trailing" id="8de-Hj-DTz"/>
                                             <constraint firstItem="yMK-JR-cyL" firstAttribute="leading" secondItem="wyI-zy-0Yj" secondAttribute="leading" id="t32-Dh-fwW"/>
@@ -124,7 +124,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="cnw-jH-Vdp" firstAttribute="leading" secondItem="uuW-64-568" secondAttribute="leading" id="6KM-FE-fWe"/>
                                             <constraint firstAttribute="bottom" secondItem="cnw-jH-Vdp" secondAttribute="bottom" id="EvQ-Jd-bVR"/>
@@ -139,7 +139,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="87"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="hk7-d4-9HT" firstAttribute="leading" secondItem="jSb-kV-jRA" secondAttribute="leading" id="Iiz-oy-c1t"/>
                                             <constraint firstItem="hk7-d4-9HT" firstAttribute="top" secondItem="jSb-kV-jRA" secondAttribute="top" id="f4N-hw-DTp"/>
@@ -156,6 +156,9 @@
                                                 <state key="normal" title="Download Regular">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="regularDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ImI-6V-Mm3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohO-xF-q15">
                                                 <rect key="frame" x="0.0" y="48" width="300" height="29"/>
@@ -163,9 +166,12 @@
                                                 <state key="normal" title="Download Serial">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="serialDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RGK-YH-t1z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.5607843137254902" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="ohO-xF-q15" firstAttribute="width" secondItem="nnS-to-1e0" secondAttribute="width" id="4RG-Xd-keh"/>
                                             <constraint firstItem="nnS-to-1e0" firstAttribute="width" secondItem="TbB-Fi-3QI" secondAttribute="width" id="6FB-jE-ONW"/>
@@ -185,6 +191,9 @@
                                                 <state key="normal" title="Clear All Views">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clearAllViews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ya-cb-hb8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pt-bm-ia2">
                                                 <rect key="frame" x="0.0" y="48" width="300" height="29"/>
@@ -192,9 +201,12 @@
                                                 <state key="normal" title="Download Concurrent">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="concurrentDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLu-KG-4eF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.5607843137254902" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="loi-Sr-UWr" firstAttribute="top" secondItem="IcI-uI-iCE" secondAttribute="top" constant="10" id="7ce-lY-B54"/>
                                             <constraint firstItem="2pt-bm-ia2" firstAttribute="centerX" secondItem="loi-Sr-UWr" secondAttribute="centerX" id="JmN-U7-cWe"/>
@@ -262,6 +274,16 @@
                             <constraint firstItem="huh-Is-rTR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gvt-rC-w2G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image1" destination="Txu-ly-XXO" id="Wu7-Ue-UyN"/>
+                        <outlet property="image2" destination="8Ug-kt-9rE" id="W3c-gf-JOb"/>
+                        <outlet property="image3" destination="a17-dT-Ofp" id="wYM-4U-WJz"/>
+                        <outlet property="image4" destination="yMK-JR-cyL" id="4Ug-kM-xWD"/>
+                        <outlet property="image5" destination="m6S-xM-Whw" id="zeZ-Wh-mpB"/>
+                        <outlet property="image6" destination="cnw-jH-Vdp" id="rQF-PY-Ifd"/>
+                        <outlet property="image7" destination="6g8-l8-PEx" id="bmQ-0W-AhP"/>
+                        <outlet property="image8" destination="hk7-d4-9HT" id="a2Z-ve-MVa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
