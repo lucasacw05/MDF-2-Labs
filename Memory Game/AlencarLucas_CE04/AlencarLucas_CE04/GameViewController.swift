@@ -10,18 +10,29 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var R1B1front: UIImageView!
+    
     var isTheImageThere = false
     
     @IBOutlet weak var ImageR1B1: UIImageView!
     
     @IBOutlet weak var ImageR1B1back: UIImageView!
     
+    @IBOutlet weak var cardsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        ImageR1B1back.image = UIImage(named: "Free Flying")
+//        print(R1B1front.bounds)
+//        print(R1B1front.frame.origin.x)
+//        print(R1B1front.frame.origin.y)
+        print(cardsView.bounds)
+        print(cardsView.frame.origin.x)
+        print(cardsView.frame.origin.y)
+        
+        UIApplication.sharedApplication().statusBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
