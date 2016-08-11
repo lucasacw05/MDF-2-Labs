@@ -10,64 +10,112 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    @IBOutlet weak var R1B1front: UIImageView!
+    //To count the total time
+    @IBOutlet weak var Timer: UILabel!
+    //Five seconds counter
+    @IBOutlet weak var fiveSecCounter: UILabel!
+    
+    @IBOutlet var backOfTheCard: [UIImageView]!
+    
+    
+    
     
     var isTheImageThere = false
     
-    @IBOutlet weak var ImageR1B1: UIImageView!
+
     
-    @IBOutlet weak var ImageR1B1back: UIImageView!
     
-    @IBOutlet weak var cardsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
 //        print(R1B1front.bounds)
 //        print(R1B1front.frame.origin.x)
 //        print(R1B1front.frame.origin.y)
-        print(cardsView.bounds)
-        print(cardsView.frame.origin.x)
-        print(cardsView.frame.origin.y)
         
-        UIApplication.sharedApplication().statusBarHidden = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    @IBAction func R1B1(sender: AnyObject) {
+//        for i in backOfTheCard {
+//            
+//            i.image = UIImage(named: "icon1.png")
+//        }
         
-        print("here")
+        var arrayOfCards = setUpImages()
         
-        if isTheImageThere == false {
+        arrayOfCards[0].accessibilityIdentifier = "tesr"
+        
+        for i in 0...(backOfTheCard.count - 1) {
             
-            ImageR1B1.image = UIImage(named: "Cave Crasher")
+            backOfTheCard[i].image = arrayOfCards[i]
             
-            isTheImageThere = true
-            
-        } else {
-            ImageR1B1.image = nil
-            isTheImageThere = false
         }
         
     
+    }
+
+    func setUpImages() -> [UIImage] {
+        
+        var arrayOfCards: [UIImage] = []
+        
+        let alien = UIImage(named: "alien")
+        
+        let classy = UIImage(named: "classy")
+        
+        let crashDummy = UIImage(named: "Crash Dummy")
+        
+        let eatDust = UIImage(named: "Eat Dust")
+        
+        let flynHigh = UIImage(named: "Flyn High")
+        
+        let freeFlying = UIImage(named: "Free Flying")
+        
+        let heyZeus = UIImage(named: "Hey Zeus")
+        
+        let lionTamer = UIImage(named: "Lion Tamer")
+        
+        let looseChange = UIImage(named: "Loose Change")
+        
+        let nappn = UIImage(named: "Nappn")
+        
+        if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn {
+            
+            arrayOfCards = [alien, classy, crashDummy, eatDust, flynHigh, freeFlying, heyZeus, lionTamer, looseChange, nappn, alien, classy, crashDummy, eatDust, flynHigh, freeFlying, heyZeus, lionTamer, looseChange, nappn]
+        }
+        
+        
+//        let punkd = UIImage(named: "Punkd")
+//        
+//        let ragsToRiches = UIImage(named: "Rags to Riches")
+//        
+//        let spearMe = UIImage(named: "Spear Me")
+//        
+//        let uncharted = UIImage(named: "Uncharted")
+//        
+//        let warmingUp = UIImage(named: "Warming Up")
+        return arrayOfCards
+    }
+
+
+    @IBAction func backButton(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+    @IBAction func cardTapped(sender: AnyObject) {
         
     }
+        
+//        print("here")
+//        
+//        if isTheImageThere == false {
+//            
+//            ImageR1B1.image = UIImage(named: "Cave Crasher")
+//            
+//            isTheImageThere = true
+//            
+//        } else {
+//            ImageR1B1.image = nil
+//            isTheImageThere = false
+//        }
+//        
     
 }
