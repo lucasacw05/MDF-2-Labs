@@ -195,13 +195,13 @@
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="ZVb-KQ-Ofg"/>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="w0e-Bh-jhB"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-R9-OiQ" userLabel="R1B1back">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-4f-qjH" userLabel="R1B1front">
                                         <rect key="frame" x="33" y="31" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-4f-qjH" userLabel="R1B1front">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-R9-OiQ" userLabel="R1B1back">
                                         <rect key="frame" x="33" y="31" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtP-XK-TvG" userLabel="R1B2">
@@ -209,11 +209,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="3UP-LX-2mk"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-Lp-bxr" userLabel="R1B2back">
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-9m-ZJe" userLabel="R1B2front">
                                         <rect key="frame" x="143" y="31" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-9m-ZJe" userLabel="R1B2front">
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-Lp-bxr" userLabel="R1B2back">
                                         <rect key="frame" x="143" y="31" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tw-UJ-ZhU" userLabel="R1B3">
@@ -221,11 +224,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="BSm-Y3-N0J"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="2pS-NX-fT1" userLabel="R1B3back">
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xFr-8c-DjD" userLabel="R1B3front">
                                         <rect key="frame" x="254" y="31" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xFr-8c-DjD" userLabel="R1B3front">
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2pS-NX-fT1" userLabel="R1B3back">
                                         <rect key="frame" x="254" y="31" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRd-W5-6Gn" userLabel="R1B4">
@@ -233,11 +239,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="iNF-lt-IEm"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="W9c-GE-ghK" userLabel="R1B4back">
+                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cm4-k4-XNg" userLabel="R1B4front">
                                         <rect key="frame" x="365" y="31" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cm4-k4-XNg" userLabel="R1B4front">
+                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9c-GE-ghK" userLabel="R1B4back">
                                         <rect key="frame" x="365" y="31" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozw-8H-eeU" userLabel="R1B5">
@@ -245,11 +254,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="iyt-Bf-8Ua"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-qh-604" userLabel="R1B5back">
+                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UFK-H1-Qnx" userLabel="R1B5front">
                                         <rect key="frame" x="475" y="31" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UFK-H1-Qnx" userLabel="R1B5front">
+                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-qh-604" userLabel="R1B5back">
                                         <rect key="frame" x="475" y="31" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqh-AT-icz" userLabel="R2B1">
@@ -257,11 +269,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="JoL-XY-jiH"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="RPp-m9-tTi" userLabel="R2B1back">
+                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gsk-1h-KpZ" userLabel="R2B1front">
                                         <rect key="frame" x="33" y="101" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gsk-1h-KpZ" userLabel="R2B1front">
+                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RPp-m9-tTi" userLabel="R2B1back">
                                         <rect key="frame" x="33" y="101" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1u-0D-QXB" userLabel="R2B2">
@@ -269,11 +284,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="QaF-te-Z8H"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="yTw-ya-aNB" userLabel="R2B2back">
+                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b03-KW-w1Y" userLabel="R2B2front">
                                         <rect key="frame" x="143" y="101" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b03-KW-w1Y" userLabel="R2B2front">
+                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTw-ya-aNB" userLabel="R2B2back">
                                         <rect key="frame" x="143" y="101" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBg-KS-4cB" userLabel="R2B3">
@@ -282,11 +300,14 @@
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.76842142696424098" green="1" blue="0.89669511051001782" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="5pq-Jv-XNA"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="7Wi-QA-5iH" userLabel="R2B3back">
+                                    <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWR-c3-lhY" userLabel="R2B3front">
                                         <rect key="frame" x="254" y="101" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWR-c3-lhY" userLabel="R2B3front">
+                                    <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Wi-QA-5iH" userLabel="R2B3back">
                                         <rect key="frame" x="254" y="101" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXN-xg-ngC" userLabel="R2B4">
@@ -294,11 +315,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="aM9-f5-UPe"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-lp-qsI" userLabel="R2B4back">
+                                    <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="put-ep-dEv" userLabel="R2B4front">
                                         <rect key="frame" x="365" y="101" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="put-ep-dEv" userLabel="R2B4front">
+                                    <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-lp-qsI" userLabel="R2B4back">
                                         <rect key="frame" x="365" y="101" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzL-3r-oQo" userLabel="R2B5">
@@ -306,11 +330,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="Pxf-eB-n6a"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="HSF-wa-Ci9" userLabel="R2B5back">
+                                    <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t15-hA-LvE" userLabel="R2B5front">
                                         <rect key="frame" x="475" y="101" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t15-hA-LvE" userLabel="R2B5front">
+                                    <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSF-wa-Ci9" userLabel="R2B5back">
                                         <rect key="frame" x="475" y="101" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-TX-3QD" userLabel="R3B1">
@@ -318,11 +345,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="tBW-kJ-d9u"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="eYz-lR-pK7" userLabel="R3B1back">
+                                    <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-by-7xA" userLabel="R3B1front">
                                         <rect key="frame" x="33" y="170" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-by-7xA" userLabel="R3B1front">
+                                    <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eYz-lR-pK7" userLabel="R3B1back">
                                         <rect key="frame" x="33" y="170" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOA-kp-SGj" userLabel="R3B2">
@@ -330,11 +360,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="Bb6-3H-Ejx"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="NSl-vJ-hf2" userLabel="R3B2front">
+                                    <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NSl-vJ-hf2" userLabel="R3B2front">
                                         <rect key="frame" x="143" y="170" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-fq-nc9" userLabel="R3B2back">
+                                    <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-fq-nc9" userLabel="R3B2back">
                                         <rect key="frame" x="143" y="170" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-3u-hNc" userLabel="R3B3">
@@ -342,11 +375,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="Jqg-qa-W46"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="21l-mX-qbN" userLabel="R3B3back">
+                                    <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-Kz-wD3" userLabel="R3B3front">
                                         <rect key="frame" x="254" y="170" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-Kz-wD3" userLabel="R3B3front">
+                                    <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21l-mX-qbN" userLabel="R3B3back">
                                         <rect key="frame" x="254" y="170" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km3-v7-a56" userLabel="R3B4">
@@ -354,11 +390,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="05H-wO-OFm"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="ah9-43-kHi" userLabel="R3B4back">
+                                    <imageView userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5av-aU-UhK" userLabel="R3B4front">
                                         <rect key="frame" x="365" y="170" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5av-aU-UhK" userLabel="R3B4front">
+                                    <imageView userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ah9-43-kHi" userLabel="R3B4back">
                                         <rect key="frame" x="365" y="170" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBD-KL-vjD" userLabel="R3B5">
@@ -366,11 +405,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="cjE-m8-5e3"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="f87-WO-jJR" userLabel="R3B5back">
+                                    <imageView userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLH-Zw-OnO" userLabel="R3B5front">
                                         <rect key="frame" x="475" y="170" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLH-Zw-OnO" userLabel="R3B5front">
+                                    <imageView userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f87-WO-jJR" userLabel="R3B5back">
                                         <rect key="frame" x="475" y="170" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntA-KY-ipM" userLabel="R4B1">
@@ -378,11 +420,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="Yse-hu-opA"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="hl2-8N-X2u" userLabel="R4B1back">
+                                    <imageView userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DwM-ft-fAS" userLabel="R4B1front">
                                         <rect key="frame" x="33" y="240" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DwM-ft-fAS" userLabel="R4B1front">
+                                    <imageView userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hl2-8N-X2u" userLabel="R4B1back">
                                         <rect key="frame" x="33" y="240" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWx-Pk-Dfh" userLabel="R4B2">
@@ -390,11 +435,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="BbX-mH-Z9Y"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="Jbu-6P-PoG" userLabel="R4B2back">
+                                    <imageView userInteractionEnabled="NO" tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QrG-up-y9x" userLabel="R4B2front">
                                         <rect key="frame" x="143" y="240" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QrG-up-y9x" userLabel="R4B2front">
+                                    <imageView userInteractionEnabled="NO" tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jbu-6P-PoG" userLabel="R4B2back">
                                         <rect key="frame" x="143" y="240" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52k-Hb-qcR" userLabel="R4B3">
@@ -402,11 +450,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="l6K-5h-9C2"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="17" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="T1v-Mh-Mbx" userLabel="R4B3back">
+                                    <imageView userInteractionEnabled="NO" tag="17" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-rB-zDK" userLabel="R4B3front">
                                         <rect key="frame" x="254" y="240" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-rB-zDK" userLabel="R4B3front">
+                                    <imageView userInteractionEnabled="NO" tag="17" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T1v-Mh-Mbx" userLabel="R4B3back">
                                         <rect key="frame" x="254" y="240" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUV-H2-eHI" userLabel="R4B4">
@@ -414,11 +465,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="c7y-7L-VAS"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="18" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-wL-jBf" userLabel="R4B4back">
+                                    <imageView userInteractionEnabled="NO" tag="18" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZwJ-Iy-eSU" userLabel="R4B4front">
                                         <rect key="frame" x="365" y="240" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZwJ-Iy-eSU" userLabel="R4B4front">
+                                    <imageView userInteractionEnabled="NO" tag="18" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-wL-jBf" userLabel="R4B4back">
                                         <rect key="frame" x="365" y="240" width="93" height="50"/>
                                     </imageView>
                                     <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnu-Eo-uLo" userLabel="R4B5">
@@ -426,11 +480,14 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.76842142700000005" green="1" blue="0.89669511049999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cardTapped:" destination="NUf-SD-TDT" eventType="touchUpInside" id="Hla-fo-4Yq"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="19" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="Isi-gz-Quy" userLabel="R4B5back">
+                                    <imageView userInteractionEnabled="NO" tag="19" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgj-b2-ati" userLabel="R4B5front">
                                         <rect key="frame" x="476" y="240" width="93" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgj-b2-ati" userLabel="R4B5front">
+                                    <imageView userInteractionEnabled="NO" tag="19" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Isi-gz-Quy" userLabel="R4B5back">
                                         <rect key="frame" x="476" y="240" width="93" height="50"/>
                                     </imageView>
                                 </subviews>
@@ -786,15 +843,55 @@
                         <outletCollection property="backOfTheCard" destination="uhG-lp-qsI" collectionClass="NSMutableArray" id="7eI-ml-TRr"/>
                         <outletCollection property="backOfTheCard" destination="HSF-wa-Ci9" collectionClass="NSMutableArray" id="j0Q-6M-PuR"/>
                         <outletCollection property="backOfTheCard" destination="eYz-lR-pK7" collectionClass="NSMutableArray" id="LFC-Qh-hgw"/>
-                        <outletCollection property="backOfTheCard" destination="NSl-vJ-hf2" collectionClass="NSMutableArray" id="eBc-TR-w4O"/>
-                        <outletCollection property="backOfTheCard" destination="21l-mX-qbN" collectionClass="NSMutableArray" id="H9C-pg-V8d"/>
-                        <outletCollection property="backOfTheCard" destination="ah9-43-kHi" collectionClass="NSMutableArray" id="5w9-10-O91"/>
-                        <outletCollection property="backOfTheCard" destination="f87-WO-jJR" collectionClass="NSMutableArray" id="Sec-3A-2TB"/>
-                        <outletCollection property="backOfTheCard" destination="hl2-8N-X2u" collectionClass="NSMutableArray" id="Kyc-Dw-6kU"/>
-                        <outletCollection property="backOfTheCard" destination="Jbu-6P-PoG" collectionClass="NSMutableArray" id="HCx-Cw-ik9"/>
-                        <outletCollection property="backOfTheCard" destination="T1v-Mh-Mbx" collectionClass="NSMutableArray" id="OKa-xd-K6j"/>
-                        <outletCollection property="backOfTheCard" destination="7Io-wL-jBf" collectionClass="NSMutableArray" id="DVa-sj-SqH"/>
-                        <outletCollection property="backOfTheCard" destination="Isi-gz-Quy" collectionClass="NSMutableArray" id="jL4-CJ-AiT"/>
+                        <outletCollection property="frontOfTheCard" destination="1Sl-4f-qjH" collectionClass="NSMutableArray" id="pfN-65-USL"/>
+                        <outletCollection property="frontOfTheCard" destination="oiK-9m-ZJe" collectionClass="NSMutableArray" id="MLq-fi-Kdj"/>
+                        <outletCollection property="frontOfTheCard" destination="xFr-8c-DjD" collectionClass="NSMutableArray" id="SxB-gp-Y7Q"/>
+                        <outletCollection property="frontOfTheCard" destination="Cm4-k4-XNg" collectionClass="NSMutableArray" id="Jow-fx-6cn"/>
+                        <outletCollection property="frontOfTheCard" destination="UFK-H1-Qnx" collectionClass="NSMutableArray" id="bNd-Ot-CI9"/>
+                        <outletCollection property="frontOfTheCard" destination="gsk-1h-KpZ" collectionClass="NSMutableArray" id="IGr-bf-ZVx"/>
+                        <outletCollection property="frontOfTheCard" destination="b03-KW-w1Y" collectionClass="NSMutableArray" id="W0a-9U-TlZ"/>
+                        <outletCollection property="frontOfTheCard" destination="CWR-c3-lhY" collectionClass="NSMutableArray" id="Pzp-u4-8d0"/>
+                        <outletCollection property="frontOfTheCard" destination="put-ep-dEv" collectionClass="NSMutableArray" id="J7h-fa-GCS"/>
+                        <outletCollection property="frontOfTheCard" destination="t15-hA-LvE" collectionClass="NSMutableArray" id="J5x-nj-zn2"/>
+                        <outletCollection property="frontOfTheCard" destination="NT3-by-7xA" collectionClass="NSMutableArray" id="bja-bi-mCc"/>
+                        <outletCollection property="frontOfTheCard" destination="NSl-vJ-hf2" collectionClass="NSMutableArray" id="ErS-Nf-WPA"/>
+                        <outletCollection property="frontOfTheCard" destination="7Y9-Kz-wD3" collectionClass="NSMutableArray" id="ysJ-pu-ium"/>
+                        <outletCollection property="frontOfTheCard" destination="5av-aU-UhK" collectionClass="NSMutableArray" id="JaJ-yh-uG6"/>
+                        <outletCollection property="frontOfTheCard" destination="KLH-Zw-OnO" collectionClass="NSMutableArray" id="DL9-Od-Ltg"/>
+                        <outletCollection property="frontOfTheCard" destination="DwM-ft-fAS" collectionClass="NSMutableArray" id="Fwy-zq-VjC"/>
+                        <outletCollection property="frontOfTheCard" destination="QrG-up-y9x" collectionClass="NSMutableArray" id="5wd-ZC-BDM"/>
+                        <outletCollection property="frontOfTheCard" destination="cyO-rB-zDK" collectionClass="NSMutableArray" id="1J2-Vw-d9P"/>
+                        <outletCollection property="frontOfTheCard" destination="ZwJ-Iy-eSU" collectionClass="NSMutableArray" id="82N-Ex-rNU"/>
+                        <outletCollection property="frontOfTheCard" destination="pgj-b2-ati" collectionClass="NSMutableArray" id="TmZ-sc-ZLV"/>
+                        <outletCollection property="cardButtonOutlet" destination="vOI-sT-hiM" collectionClass="NSMutableArray" id="dQb-r6-QI2"/>
+                        <outletCollection property="cardButtonOutlet" destination="CtP-XK-TvG" collectionClass="NSMutableArray" id="wwU-cf-vS8"/>
+                        <outletCollection property="cardButtonOutlet" destination="8tw-UJ-ZhU" collectionClass="NSMutableArray" id="gxW-98-EuB"/>
+                        <outletCollection property="cardButtonOutlet" destination="DRd-W5-6Gn" collectionClass="NSMutableArray" id="gAQ-ad-Jhw"/>
+                        <outletCollection property="cardButtonOutlet" destination="Ozw-8H-eeU" collectionClass="NSMutableArray" id="ReU-P4-RWJ"/>
+                        <outletCollection property="cardButtonOutlet" destination="zqh-AT-icz" collectionClass="NSMutableArray" id="mew-Oo-GyP"/>
+                        <outletCollection property="cardButtonOutlet" destination="K1u-0D-QXB" collectionClass="NSMutableArray" id="xil-Nz-wHO"/>
+                        <outletCollection property="cardButtonOutlet" destination="vBg-KS-4cB" collectionClass="NSMutableArray" id="GLW-Ya-Sd7"/>
+                        <outletCollection property="cardButtonOutlet" destination="jXN-xg-ngC" collectionClass="NSMutableArray" id="DFD-jp-u6f"/>
+                        <outletCollection property="cardButtonOutlet" destination="VzL-3r-oQo" collectionClass="NSMutableArray" id="ryH-oL-jQv"/>
+                        <outletCollection property="cardButtonOutlet" destination="3bW-TX-3QD" collectionClass="NSMutableArray" id="uaK-Vt-YuI"/>
+                        <outletCollection property="cardButtonOutlet" destination="KOA-kp-SGj" collectionClass="NSMutableArray" id="K6v-X7-R8L"/>
+                        <outletCollection property="cardButtonOutlet" destination="0gd-3u-hNc" collectionClass="NSMutableArray" id="otd-B1-ZGK"/>
+                        <outletCollection property="cardButtonOutlet" destination="km3-v7-a56" collectionClass="NSMutableArray" id="X9j-yC-UJ0"/>
+                        <outletCollection property="cardButtonOutlet" destination="QBD-KL-vjD" collectionClass="NSMutableArray" id="vjv-ff-DJ1"/>
+                        <outletCollection property="cardButtonOutlet" destination="ntA-KY-ipM" collectionClass="NSMutableArray" id="hIB-qW-lAU"/>
+                        <outletCollection property="cardButtonOutlet" destination="cWx-Pk-Dfh" collectionClass="NSMutableArray" id="0kX-4e-PXW"/>
+                        <outletCollection property="cardButtonOutlet" destination="52k-Hb-qcR" collectionClass="NSMutableArray" id="xEe-o8-gHR"/>
+                        <outletCollection property="cardButtonOutlet" destination="iUV-H2-eHI" collectionClass="NSMutableArray" id="6O3-3K-GPm"/>
+                        <outletCollection property="cardButtonOutlet" destination="Mnu-Eo-uLo" collectionClass="NSMutableArray" id="aJm-Th-ND7"/>
+                        <outletCollection property="backOfTheCard" destination="8kp-fq-nc9" collectionClass="NSMutableArray" id="giS-7p-pCd"/>
+                        <outletCollection property="backOfTheCard" destination="21l-mX-qbN" collectionClass="NSMutableArray" id="0kU-4C-Cts"/>
+                        <outletCollection property="backOfTheCard" destination="ah9-43-kHi" collectionClass="NSMutableArray" id="LSS-gW-GsJ"/>
+                        <outletCollection property="backOfTheCard" destination="f87-WO-jJR" collectionClass="NSMutableArray" id="ltu-Iq-T6f"/>
+                        <outletCollection property="backOfTheCard" destination="hl2-8N-X2u" collectionClass="NSMutableArray" id="Pnf-oD-B1B"/>
+                        <outletCollection property="backOfTheCard" destination="Jbu-6P-PoG" collectionClass="NSMutableArray" id="LmI-GB-5vw"/>
+                        <outletCollection property="backOfTheCard" destination="T1v-Mh-Mbx" collectionClass="NSMutableArray" id="wqc-7t-YBc"/>
+                        <outletCollection property="backOfTheCard" destination="7Io-wL-jBf" collectionClass="NSMutableArray" id="mhS-cJ-FSy"/>
+                        <outletCollection property="backOfTheCard" destination="Isi-gz-Quy" collectionClass="NSMutableArray" id="mnp-Wr-8MA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyq-R4-mUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -808,7 +905,6 @@
         <image name="UI_storescreen_tab" width="635" height="534"/>
         <image name="button_play" width="360" height="139"/>
         <image name="coverscreen_background" width="640" height="960"/>
-        <image name="icon1" width="512" height="512"/>
         <image name="plane1" width="640" height="960"/>
         <image name="plane2" width="640" height="960"/>
         <image name="plane3" width="640" height="960"/>
