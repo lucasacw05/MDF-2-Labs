@@ -71,6 +71,16 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(cardButtonOutlet[28].bounds)
+        print(cardButtonOutlet[28].frame.origin.x)
+        print(cardButtonOutlet[28].frame.origin.y)
+        
+        print(cardButtonOutlet[29].bounds)
+        print(cardButtonOutlet[29].frame.origin.x)
+        print(cardButtonOutlet[29].frame.origin.y)
+        
+        
+        
         //Finish setting up audio effects
         do {
             pointScoredAP = try AVAudioPlayer(contentsOfURL: pointScored)
@@ -79,7 +89,6 @@ class GameViewController: UIViewController {
         } catch {
             print(error)
         }
-        
         
         //        print(R1B1front.bounds)
         //        print(R1B1front.frame.origin.x)
@@ -94,15 +103,27 @@ class GameViewController: UIViewController {
         //Shuffle array each time the view loads
         arrayOfCards.shuffle()
         
-        //Sets the front image of each card in the game
-        for i in 0...(frontOfTheCard.count - 1) {
-            frontOfTheCard[i].image = arrayOfCards[i]
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
+            
+            //Sets the front image of each card in the game
+            for i in 0...(frontOfTheCard.count - 1) {
+                frontOfTheCard[i].image = arrayOfCards[i]
+            }
+ 
         }
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
+            
+            //Sets the front image of each card in the game
+            for i in 0...19 {
+                frontOfTheCard[i].image = arrayOfCards[i]
+            }
+            
+        }
+        
         
         //Five seconds count down function call
         setUp5SecCountdownTimer()
-        
-        
     }
     
     //Timer to count how long the user finishes the game
@@ -145,6 +166,7 @@ class GameViewController: UIViewController {
         //Disables every button to prevent taps while the game don't start.
         for button in cardButtonOutlet {
             button.enabled = false
+            print(button.tag)
         }
     }
     
@@ -164,14 +186,26 @@ class GameViewController: UIViewController {
             //Start gameTimer
             startGameTimer()
             
-            //Set all backOfTheCard imageViews to the backOfCardImage
-            for card in 0...(backOfTheCard.count - 1) {
-                backOfTheCard[card].image = backOfCardImage
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
+                //Set all backOfTheCard imageViews to the backOfCardImage
+                for card in 0...(backOfTheCard.count - 1) {
+                    backOfTheCard[card].image = backOfCardImage
+                }
+            }
+            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
+                
+                //Set all backOfTheCard imageViews to the backOfCardImage
+                for card in 0...19 {
+                    backOfTheCard[card].image = backOfCardImage
+                }
+                
             }
             
             //Enable the buttons again
             for button in cardButtonOutlet {
                 button.enabled = true
+                print(button.tag)
             }
         }
     }
@@ -229,10 +263,13 @@ class GameViewController: UIViewController {
     
     @IBAction func cardTapped(sender: AnyObject) {
         
+        print("It worked")
+        
         //Play Sound
         clickAP.play()
         
         let location = sender.tag
+        print(location)
         
         if firstImageSelection == false {
             print("First Selection")
@@ -302,20 +339,42 @@ class GameViewController: UIViewController {
                     //Play pointScored sound
                     pointScoredAP.play()
                     
-                    //Finish Game
-                    if arrayOfDisabledButtons.count == 20  {
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
+                       
+                        //Finish Game
+                        if arrayOfDisabledButtons.count == 20  {
+                            
+                            //Turn off timer
+                            gameTimerIsOn = false
+                            
+                            //Play pointScored sound
+                            finishAP.play()
+                            
+                            //Present Alert to inform the user finished the game
+                            let alert = UIAlertController(title: "Congrats!!", message: "You Finished the Game in \(gameTimerSeconds) Seconds!", preferredStyle: .Alert)
+                            let alertAction = UIAlertAction(title: "Done", style: .Default, handler: nil)
+                            alert.addAction(alertAction)
+                            presentViewController(alert, animated: true, completion: nil)
+                        }
+                    }
+                    
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
                         
-                        //Turn off timer
-                        gameTimerIsOn = false
-                        
-                        //Play pointScored sound
-                        finishAP.play()
-                        
-                        //Present Alert to inform the user finished the game
-                        let alert = UIAlertController(title: "Congrats!!", message: "You Finished the Game in \(gameTimerSeconds) Seconds!", preferredStyle: .Alert)
-                        let alertAction = UIAlertAction(title: "Done", style: .Default, handler: nil)
-                        alert.addAction(alertAction)
-                        presentViewController(alert, animated: true, completion: nil)
+                        //Finish Game
+                        if arrayOfDisabledButtons.count == 30  {
+                            
+                            //Turn off timer
+                            gameTimerIsOn = false
+                            
+                            //Play pointScored sound
+                            finishAP.play()
+                            
+                            //Present Alert to inform the user finished the game
+                            let alert = UIAlertController(title: "Congrats!!", message: "You Finished the Game in \(gameTimerSeconds) Seconds!", preferredStyle: .Alert)
+                            let alertAction = UIAlertAction(title: "Done", style: .Default, handler: nil)
+                            alert.addAction(alertAction)
+                            presentViewController(alert, animated: true, completion: nil)
+                        }
                     }
                     
                 } else {
@@ -354,21 +413,37 @@ class GameViewController: UIViewController {
         
         let nappn = UIImage(named: "Nappn")
         
-        if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
             
-            arrayOfCards = [alien, alien, classy, classy, crashDummy, crashDummy, eatDust, eatDust, flynHigh, flynHigh, freeFlying, freeFlying, heyZeus, heyZeus, lionTamer, lionTamer, looseChange, looseChange, nappn, nappn]
+            print("Ipad")
+            
+            //FOR IPAD
+            let punkd = UIImage(named: "Punkd")
+            
+            let ragsToRiches = UIImage(named: "Rags to Riches")
+            
+            let spearMe = UIImage(named: "Spear Me")
+            
+            let uncharted = UIImage(named: "Uncharted")
+            
+            let warmingUp = UIImage(named: "Warming Up")
+            
+            if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn, punkd = punkd, ragsToRiches = ragsToRiches, spearMe = spearMe, uncharted = uncharted, warmingUp = warmingUp {
+                
+                arrayOfCards = [alien, alien, classy, classy, crashDummy, crashDummy, eatDust, eatDust, flynHigh, flynHigh, freeFlying, freeFlying, heyZeus, heyZeus, lionTamer, lionTamer, looseChange, looseChange, nappn, nappn, punkd, punkd, ragsToRiches, ragsToRiches, spearMe, spearMe, uncharted, uncharted, warmingUp, warmingUp]
+            }
         }
         
-        //FOR IPAD
-        //        let punkd = UIImage(named: "Punkd")
-        //
-        //        let ragsToRiches = UIImage(named: "Rags to Riches")
-        //
-        //        let spearMe = UIImage(named: "Spear Me")
-        //
-        //        let uncharted = UIImage(named: "Uncharted")
-        //
-        //        let warmingUp = UIImage(named: "Warming Up")
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
+            
+            print("Iphone")
+            
+            if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn {
+                
+                arrayOfCards = [alien, alien, classy, classy, crashDummy, crashDummy, eatDust, eatDust, flynHigh, flynHigh, freeFlying, freeFlying, heyZeus, heyZeus, lionTamer, lionTamer, looseChange, looseChange, nappn, nappn]
+            }
+        }
+        
         return arrayOfCards
     }
     
@@ -406,6 +481,23 @@ class GameViewController: UIViewController {
         arrayOfCards[19].accessibilityIdentifier = "Nappn"
         
         //TODO: - Setup the iPad ones
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
+            
+            arrayOfCards[20].accessibilityIdentifier = "Punkd"
+            arrayOfCards[21].accessibilityIdentifier = "Punkd"
+            
+            arrayOfCards[22].accessibilityIdentifier = "Rags to Riches"
+            arrayOfCards[23].accessibilityIdentifier = "Rags to Riches"
+            
+            arrayOfCards[24].accessibilityIdentifier = "Spear Me"
+            arrayOfCards[25].accessibilityIdentifier = "Spear Me"
+            
+            arrayOfCards[26].accessibilityIdentifier = "Uncharted"
+            arrayOfCards[27].accessibilityIdentifier = "Uncharted"
+            
+            arrayOfCards[28].accessibilityIdentifier = "Warming Up"
+            arrayOfCards[29].accessibilityIdentifier = "Warming Up"
+        }
     }
     
     //Back button to initial VC
