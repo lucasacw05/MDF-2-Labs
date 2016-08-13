@@ -11,6 +11,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
+    //Audio files setup
     var pointScored = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("pointScored", ofType: "wav")!)
     var pointScoredAP = AVAudioPlayer()
     
@@ -27,13 +28,11 @@ class GameViewController: UIViewController {
     var gameTimerSeconds = 0
     var gameTimerIsOn = false
     
-    
     //Five seconds counter
     @IBOutlet weak var fiveSecCounter: UILabel!
     //Five second timer and countDown in seconds
     var fiveSecTimer = NSTimer()
     var countDown: Int = 5
-    
     
     //Card Delay Timer Creation
     var cardDelayTimer = NSTimer()
@@ -44,42 +43,32 @@ class GameViewController: UIViewController {
     //Image of the back of the card.
     var backOfCardImage = UIImage(named: "icon")
     
-    
     //All the ImageViews that are going to represent the front of the card
     @IBOutlet var frontOfTheCard: [UIImageView]!
-    
     
     //Button outlet for each card
     @IBOutlet var cardButtonOutlet: [UIButton]!
     
-    //Array to hold the data of every disabled button by points scored
+    //Array to hold the data of every disabled button by points scored. This is used to properly setup the enabled/disabled buttons everytime the user scores a point and to determine if the user has finished the game
     var arrayOfDisabledButtons: [UIButton] = []
     
-    
+    //Variables to capture data regarding each card selection, like its tag, if it was selected, and its accessibility identifier
     var firstImageSelection: Bool = false
     var firstImageData: String = ""
     var firstImageLocation = Int()
     
+    //Variables to capture data regarding each card selection, like its tag, if it was selected, and its accessibility identifier
     var secondImageSelection: Bool = false
     var secondImageData: String = ""
     var secondImageLocation = Int()
     
+    //Variable to hold all the main images for the cards
     var arrayOfCards: [UIImage] = []
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(cardButtonOutlet[28].bounds)
-        print(cardButtonOutlet[28].frame.origin.x)
-        print(cardButtonOutlet[28].frame.origin.y)
-        
-        print(cardButtonOutlet[29].bounds)
-        print(cardButtonOutlet[29].frame.origin.x)
-        print(cardButtonOutlet[29].frame.origin.y)
-        
-        
         
         //Finish setting up audio effects
         do {
@@ -103,13 +92,14 @@ class GameViewController: UIViewController {
         //Shuffle array each time the view loads
         arrayOfCards.shuffle()
         
+        //Check against the different devices
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
             
             //Sets the front image of each card in the game
             for i in 0...(frontOfTheCard.count - 1) {
                 frontOfTheCard[i].image = arrayOfCards[i]
             }
- 
+            
         }
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
@@ -118,10 +108,8 @@ class GameViewController: UIViewController {
             for i in 0...19 {
                 frontOfTheCard[i].image = arrayOfCards[i]
             }
-            
         }
-        
-        
+
         //Five seconds count down function call
         setUp5SecCountdownTimer()
     }
@@ -137,6 +125,7 @@ class GameViewController: UIViewController {
     //Update Timer
     func updateGameTimer() {
         
+        //Check agains saved data regarding the main timer
         if gameTimerIsOn == true {
             
             gameTimerSeconds += 1
@@ -172,6 +161,7 @@ class GameViewController: UIViewController {
     
     func updateFiveSecCounter() {
         
+        //Five sec countdown at the beginning of the game
         if (countDown > 0) {
             //Subtract countDown and update UI Outlet
             countDown -= 1
@@ -186,6 +176,7 @@ class GameViewController: UIViewController {
             //Start gameTimer
             startGameTimer()
             
+            //Check agains the different devices to set the back of the card image to each card
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
                 //Set all backOfTheCard imageViews to the backOfCardImage
                 for card in 0...(backOfTheCard.count - 1) {
@@ -225,9 +216,9 @@ class GameViewController: UIViewController {
     
     func selectionDelay() {
         
+        //Countdown for delay when wrong cards were chosen
         if (cardDelayCountDown > 0) {
             cardDelayCountDown -= 1
-            
             
         } else {
             
@@ -268,35 +259,45 @@ class GameViewController: UIViewController {
         //Play Sound
         clickAP.play()
         
+        //Get the button tag as location
         let location = sender.tag
-        print(location)
         
+        //Check agains the selection
         if firstImageSelection == false {
             print("First Selection")
             
+            //Check agains the accessibility identifier of the chosen card
             if let identifier = arrayOfCards[location].accessibilityIdentifier {
                 
+                //Save the data
                 firstImageData = identifier
                 print("ID:\(firstImageData)")
                 
+                //"Flip" card and disable it being clicked again
                 backOfTheCard[location].hidden = true
                 cardButtonOutlet[location].enabled = false
                 
+                //Save the data
                 firstImageSelection = true
                 firstImageLocation = location
             }
             
+        //Check agains the selection
         } else if firstImageSelection == true && secondImageSelection == false {
             print("Second Selection")
             
+            //Check agains the accessibility identifier of the chosen card
             if let identifier = arrayOfCards[location].accessibilityIdentifier {
                 
+                //Save the data
                 secondImageData = identifier
                 print("ID:\(secondImageData)")
                 
+                //"Flip" card and disable it being clicked again
                 backOfTheCard[location].hidden = true
                 cardButtonOutlet[location].enabled = false
                 
+                //Save the data
                 secondImageSelection = true
                 secondImageLocation = location
             }
@@ -307,8 +308,7 @@ class GameViewController: UIViewController {
                 //Check agains the image identifiers, and if they're equal, eliminate the card match
                 if firstImageData == secondImageData {
                     
-                    
-                    
+                    //"Deleting function": It hide the images and disable the button.
                     frontOfTheCard[firstImageLocation].hidden = true
                     backOfTheCard[firstImageLocation].hidden = true
                     cardButtonOutlet[firstImageLocation].enabled = false
@@ -317,6 +317,7 @@ class GameViewController: UIViewController {
                     let buttonOfFirstSelection = cardButtonOutlet[firstImageLocation]
                     arrayOfDisabledButtons.append(buttonOfFirstSelection)
                     
+                    //"Deleting function": It hide the images and disable the button.
                     frontOfTheCard[secondImageLocation].hidden = true
                     backOfTheCard[secondImageLocation].hidden = true
                     cardButtonOutlet[secondImageLocation].enabled = false
@@ -339,8 +340,9 @@ class GameViewController: UIViewController {
                     //Play pointScored sound
                     pointScoredAP.play()
                     
+                    //Check agains the device
                     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
-                       
+                        
                         //Finish Game
                         if arrayOfDisabledButtons.count == 20  {
                             
@@ -357,7 +359,7 @@ class GameViewController: UIViewController {
                             presentViewController(alert, animated: true, completion: nil)
                         }
                     }
-                    
+                    //Check agains the device
                     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
                         
                         //Finish Game
@@ -413,6 +415,7 @@ class GameViewController: UIViewController {
         
         let nappn = UIImage(named: "Nappn")
         
+        //Check against the devide and set the proper array of data that the app will end up using
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
             
             print("Ipad")
@@ -428,18 +431,23 @@ class GameViewController: UIViewController {
             
             let warmingUp = UIImage(named: "Warming Up")
             
+            //Optional biding
             if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn, punkd = punkd, ragsToRiches = ragsToRiches, spearMe = spearMe, uncharted = uncharted, warmingUp = warmingUp {
                 
+                //Set data to array
                 arrayOfCards = [alien, alien, classy, classy, crashDummy, crashDummy, eatDust, eatDust, flynHigh, flynHigh, freeFlying, freeFlying, heyZeus, heyZeus, lionTamer, lionTamer, looseChange, looseChange, nappn, nappn, punkd, punkd, ragsToRiches, ragsToRiches, spearMe, spearMe, uncharted, uncharted, warmingUp, warmingUp]
             }
         }
         
+        //Check against the devide and set the proper array of data that the app will end up using
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
             
             print("Iphone")
             
+            //Optional biding
             if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn {
                 
+                //Set data to array
                 arrayOfCards = [alien, alien, classy, classy, crashDummy, crashDummy, eatDust, eatDust, flynHigh, flynHigh, freeFlying, freeFlying, heyZeus, heyZeus, lionTamer, lionTamer, looseChange, looseChange, nappn, nappn]
             }
         }
@@ -450,6 +458,7 @@ class GameViewController: UIViewController {
     //Functions to setup all accessibility identifiers of the arrayOfCards
     func setUpAccessibilityIdentifiers() {
         
+        //Seting up all the accessibility identifiers for iPhone and iPad
         arrayOfCards[0].accessibilityIdentifier = "alien"
         arrayOfCards[1].accessibilityIdentifier = "alien"
         
@@ -480,7 +489,7 @@ class GameViewController: UIViewController {
         arrayOfCards[18].accessibilityIdentifier = "Nappn"
         arrayOfCards[19].accessibilityIdentifier = "Nappn"
         
-        //TODO: - Setup the iPad ones
+        //Seting up all the accessibility identifiers for iPad specifically
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
             
             arrayOfCards[20].accessibilityIdentifier = "Punkd"
@@ -507,13 +516,12 @@ class GameViewController: UIViewController {
     }
 }
 
-
+//Extension for Shuffling any array
+//I couldn't figure it out by myself how to shuffle the array as I wanted, so I found this way of doing it using extensions. I got the help from GitHub, more specifically in this link, from ijoshsmith: https://gist.github.com/ijoshsmith/5e3c7d8c2099a3fe8dc3
 extension Array {
     mutating func shuffle() {
-        
         for _ in 0..<10
-        {
-            sortInPlace { (_,_) in arc4random() < arc4random() }
+        {  sortInPlace { (_,_) in arc4random() < arc4random() }
         }
     }
 }
