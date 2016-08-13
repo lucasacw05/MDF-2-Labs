@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		872FE7811D5B7D16002BCE27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FE7801D5B7D16002BCE27 /* GameViewController.swift */; };
+		875436271D5EA0A7006D51A8 /* pointScored.wav in Resources */ = {isa = PBXBuildFile; fileRef = 875436261D5EA0A7006D51A8 /* pointScored.wav */; };
+		875436291D5EA2BC006D51A8 /* finish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 875436281D5EA2BC006D51A8 /* finish.wav */; };
+		8754362B1D5EA34A006D51A8 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8754362A1D5EA34A006D51A8 /* click.wav */; };
 		8780F6B81D5C6F980010DE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8780F6B71D5C6F980010DE0E /* Assets.xcassets */; };
 		878D6F021D5C691700608304 /* TrajanPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 878D6F011D5C691700608304 /* TrajanPro-Bold.otf */; };
 		87ED35D21D58C18300529941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED35D11D58C18300529941 /* AppDelegate.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		872FE7801D5B7D16002BCE27 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		875436261D5EA0A7006D51A8 /* pointScored.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pointScored.wav; sourceTree = "<group>"; };
+		875436281D5EA2BC006D51A8 /* finish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finish.wav; sourceTree = "<group>"; };
+		8754362A1D5EA34A006D51A8 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		8780F6B71D5C6F980010DE0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		878D6F011D5C691700608304 /* TrajanPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TrajanPro-Bold.otf"; sourceTree = "<group>"; };
 		87ED35CE1D58C18300529941 /* AlencarLucas_CE04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlencarLucas_CE04.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8754362C1D5EA515006D51A8 /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				8754362A1D5EA34A006D51A8 /* click.wav */,
+				875436281D5EA2BC006D51A8 /* finish.wav */,
+				875436261D5EA0A7006D51A8 /* pointScored.wav */,
+			);
+			name = "Sound Effects";
+			sourceTree = "<group>";
+		};
 		87ED35C51D58C18300529941 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +74,7 @@
 		87ED35D01D58C18300529941 /* AlencarLucas_CE04 */ = {
 			isa = PBXGroup;
 			children = (
+				8754362C1D5EA515006D51A8 /* Sound Effects */,
 				87ED35D11D58C18300529941 /* AppDelegate.swift */,
 				87ED35D31D58C18300529941 /* ViewController.swift */,
 				872FE7801D5B7D16002BCE27 /* GameViewController.swift */,
@@ -130,8 +147,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				878D6F021D5C691700608304 /* TrajanPro-Bold.otf in Resources */,
+				875436291D5EA2BC006D51A8 /* finish.wav in Resources */,
 				87ED35DC1D58C18300529941 /* LaunchScreen.storyboard in Resources */,
 				8780F6B81D5C6F980010DE0E /* Assets.xcassets in Resources */,
+				8754362B1D5EA34A006D51A8 /* click.wav in Resources */,
+				875436271D5EA0A7006D51A8 /* pointScored.wav in Resources */,
 				87ED35D71D58C18300529941 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

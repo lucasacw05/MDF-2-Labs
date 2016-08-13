@@ -7,30 +7,47 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController {
-
-    //To count the total time
+    
+    var pointScored = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("pointScored", ofType: "wav")!)
+    var pointScoredAP = AVAudioPlayer()
+    
+    var click = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
+    var clickAP = AVAudioPlayer()
+    
+    var finish = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("finish", ofType: "wav")!)
+    var finishAP = AVAudioPlayer()
+    
+    
+    //To count the total time of the game
     @IBOutlet weak var Timer: UILabel!
-    //TODO:- CountUp timer
+    var gameTimer = NSTimer()
+    var gameTimerSeconds = 0
+    var gameTimerIsOn = false
+    
     
     //Five seconds counter
     @IBOutlet weak var fiveSecCounter: UILabel!
     //Five second timer and countDown in seconds
     var fiveSecTimer = NSTimer()
-    var countDown: Int = 1
+    var countDown: Int = 5
+    
     
     //Card Delay Timer Creation
     var cardDelayTimer = NSTimer()
-    var cardDelayCountDown: Int = 2
+    var cardDelayCountDown: Int = 1
     
     //All ImageViews that are going to represent the back of the cards
     @IBOutlet var backOfTheCard: [UIImageView]!
     //Image of the back of the card.
     var backOfCardImage = UIImage(named: "icon")
     
+    
     //All the ImageViews that are going to represent the front of the card
     @IBOutlet var frontOfTheCard: [UIImageView]!
+    
     
     //Button outlet for each card
     @IBOutlet var cardButtonOutlet: [UIButton]!
@@ -46,7 +63,7 @@ class GameViewController: UIViewController {
     var secondImageSelection: Bool = false
     var secondImageData: String = ""
     var secondImageLocation = Int()
-
+    
     var arrayOfCards: [UIImage] = []
     
     
@@ -54,9 +71,19 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print(R1B1front.bounds)
-//        print(R1B1front.frame.origin.x)
-//        print(R1B1front.frame.origin.y)
+        //Finish setting up audio effects
+        do {
+            pointScoredAP = try AVAudioPlayer(contentsOfURL: pointScored)
+            clickAP = try AVAudioPlayer(contentsOfURL: click)
+            finishAP = try AVAudioPlayer(contentsOfURL: finish)
+        } catch {
+            print(error)
+        }
+        
+        
+        //        print(R1B1front.bounds)
+        //        print(R1B1front.frame.origin.x)
+        //        print(R1B1front.frame.origin.y)
         
         //Create array of cards
         arrayOfCards = setUpImages()
@@ -72,12 +99,44 @@ class GameViewController: UIViewController {
             frontOfTheCard[i].image = arrayOfCards[i]
         }
         
+        //Five seconds count down function call
         setUp5SecCountdownTimer()
         
         
     }
     
-   
+    //Timer to count how long the user finishes the game
+    func startGameTimer() {
+        gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.updateGameTimer), userInfo: nil, repeats: true)
+        
+        //Allow the timer to start working properly, updating the UI
+        gameTimerIsOn = true
+    }
+    
+    //Update Timer
+    func updateGameTimer() {
+        
+        if gameTimerIsOn == true {
+            
+            gameTimerSeconds += 1
+            
+            //Update UI based on these simple checks
+            if gameTimerSeconds <= 9 {
+                
+                Timer.text = "Timer: 0\(gameTimerSeconds)s"
+                
+            } else {
+                
+                Timer.text = "Timer: \(gameTimerSeconds)s"
+            }
+            
+        } else {
+            //Turn off the timer
+            gameTimer.invalidate()
+            gameTimerIsOn = false
+        }
+    }
+    
     //5 Seconds Timer CountDown setup
     func setUp5SecCountdownTimer() {
         //Assign value to already created NSTimer
@@ -102,6 +161,9 @@ class GameViewController: UIViewController {
             fiveSecCounter.text = nil
             fiveSecTimer.invalidate()
             
+            //Start gameTimer
+            startGameTimer()
+            
             //Set all backOfTheCard imageViews to the backOfCardImage
             for card in 0...(backOfTheCard.count - 1) {
                 backOfTheCard[card].image = backOfCardImage
@@ -118,7 +180,7 @@ class GameViewController: UIViewController {
     //Card Delay Timer Setup
     func setupCardDelayTimer() {
         //Assign value to already created NSTimer
-        cardDelayTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.selectionDelay), userInfo: nil, repeats: true)
+        cardDelayTimer = NSTimer.scheduledTimerWithTimeInterval(0.75, target: self, selector: #selector(GameViewController.selectionDelay), userInfo: nil, repeats: true)
         
         //Disables every button so that they won't be tapped during the card's delay time
         for button in cardButtonOutlet {
@@ -131,8 +193,7 @@ class GameViewController: UIViewController {
         
         if (cardDelayCountDown > 0) {
             cardDelayCountDown -= 1
-            //TODO: - Delete this line below
-            fiveSecCounter.text = String("0\(cardDelayCountDown)s")
+            
             
         } else {
             
@@ -149,6 +210,7 @@ class GameViewController: UIViewController {
                 button.enabled = false
             }
             
+            //Flip back the cards because they didn't match
             backOfTheCard[firstImageLocation].hidden = false
             backOfTheCard[secondImageLocation].hidden = false
             
@@ -167,11 +229,14 @@ class GameViewController: UIViewController {
     
     @IBAction func cardTapped(sender: AnyObject) {
         
+        //Play Sound
+        clickAP.play()
+        
         let location = sender.tag
         
         if firstImageSelection == false {
             print("First Selection")
-        
+            
             if let identifier = arrayOfCards[location].accessibilityIdentifier {
                 
                 firstImageData = identifier
@@ -202,8 +267,11 @@ class GameViewController: UIViewController {
             
             if firstImageSelection == true && secondImageSelection && true {
                 
+                //Check agains the image identifiers, and if they're equal, eliminate the card match
                 if firstImageData == secondImageData {
-                
+                    
+                    
+                    
                     frontOfTheCard[firstImageLocation].hidden = true
                     backOfTheCard[firstImageLocation].hidden = true
                     cardButtonOutlet[firstImageLocation].enabled = false
@@ -230,24 +298,34 @@ class GameViewController: UIViewController {
                     secondImageData = ""
                     secondImageSelection = false
                     secondImageLocation = 0
-                
-                
+                    
+                    //Play pointScored sound
+                    pointScoredAP.play()
+                    
+                    //Finish Game
+                    if arrayOfDisabledButtons.count == 20  {
+                        
+                        //Turn off timer
+                        gameTimerIsOn = false
+                        
+                        //Play pointScored sound
+                        finishAP.play()
+                        
+                        //Present Alert to inform the user finished the game
+                        let alert = UIAlertController(title: "Congrats!!", message: "You Finished the Game in \(gameTimerSeconds) Seconds!", preferredStyle: .Alert)
+                        let alertAction = UIAlertAction(title: "Done", style: .Default, handler: nil)
+                        alert.addAction(alertAction)
+                        presentViewController(alert, animated: true, completion: nil)
+                    }
+                    
                 } else {
-                //TODO: - Set up timer and reset everything without deleting the array.
-                
-                    
-                    
                     
                     //Call function to cause delay in the process of choosing new cards
                     setupCardDelayTimer()
-                    
-                    
                 }
                 
             }
         }
-        
-        
     }
     
     
@@ -282,15 +360,15 @@ class GameViewController: UIViewController {
         }
         
         //FOR IPAD
-//        let punkd = UIImage(named: "Punkd")
-//        
-//        let ragsToRiches = UIImage(named: "Rags to Riches")
-//        
-//        let spearMe = UIImage(named: "Spear Me")
-//        
-//        let uncharted = UIImage(named: "Uncharted")
-//        
-//        let warmingUp = UIImage(named: "Warming Up")
+        //        let punkd = UIImage(named: "Punkd")
+        //
+        //        let ragsToRiches = UIImage(named: "Rags to Riches")
+        //
+        //        let spearMe = UIImage(named: "Spear Me")
+        //
+        //        let uncharted = UIImage(named: "Uncharted")
+        //
+        //        let warmingUp = UIImage(named: "Warming Up")
         return arrayOfCards
     }
     
@@ -335,8 +413,6 @@ class GameViewController: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
 }
 
 
