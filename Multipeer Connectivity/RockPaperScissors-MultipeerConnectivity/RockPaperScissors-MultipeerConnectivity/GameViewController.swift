@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var firstPlayerLabel: UILabel!
     @IBOutlet weak var firstPlayerChoice: UIImageView!
     @IBOutlet weak var firstPlayerChoiceName: UILabel!
+    @IBOutlet weak var firstPlayerScore: UILabel!
     
     //Label and image view to represent the opponent's side
     @IBOutlet weak var opponentLabel: UILabel!
@@ -37,14 +38,11 @@ class GameViewController: UIViewController {
     var peerID: MCPeerID! //Device ID
     var session: MCSession! //Connection between devices
     
-   
     //Default User's and opponent's selection
     var userSelection = Selection(segment: 0, image: UIImage(named: "rock1")!, name: "Rock")
     var opponentSelection = Selection(segment: 0, image: UIImage(named: "rock1")!, name: "")
     
-    //Boolean to correctly check if a replay is going to happen so that the correct checks could be done without messing up the game logic.
-    var wasReplayAlreadyTapped = "false"
-    
+    //TODO: - Create SCORE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +69,8 @@ class GameViewController: UIViewController {
     
     
     @IBAction func replayButtonTapped(sender: AnyObject) {
+        
+        
         //Reset userSelection and opponent Selection
         userSelection.segment = 0
         userSelection.image = UIImage(named: "rock1")
@@ -103,21 +103,6 @@ class GameViewController: UIViewController {
         //Enable I'm ready button
         userReadyOutlet.enabled = true
         userReadyOutlet.hidden = false
-        
-        
-        //Update data of the "Boolean"
-        wasReplayAlreadyTapped = "true"
- 
-        //Send data to peer as soon as the user taps the replay button trying to avoid logic errors
-        if let replayBool = wasReplayAlreadyTapped.dataUsingEncoding(NSUTF8StringEncoding) {
-            
-            do {
-                try session.sendData(replayBool, toPeers: session.connectedPeers, withMode: MCSessionSendDataMode.Reliable)
-                print("Information about boolean was sent")
-            } catch {
-                print(error)
-            }
-        }
         
     }
     
@@ -163,6 +148,7 @@ class GameViewController: UIViewController {
     
     
     @IBAction func userReadyTapped(sender: AnyObject) {
+        
         //Creates a variable to represent the selection
         var selection: AnyObject
         //Instantiates it as archived Data with root object based on the userSelection object
@@ -265,11 +251,6 @@ extension GameViewController: MCSessionDelegate {
     //Function for receiving data
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
     
-        //Build the boolean data variable
-        if let replayBool: String = String(data: data, encoding: NSUTF8StringEncoding) {
-            
-            wasReplayAlreadyTapped = replayBool
-        }
         
         //Optional biding to make sure the object exists and won't crash the app
         if let opponentData = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Selection {
