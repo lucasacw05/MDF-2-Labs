@@ -135,11 +135,21 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rps" translatesAutoresizingMaskIntoConstraints="NO" id="Eq6-WK-sNY">
                                         <rect key="frame" x="0.0" y="146" width="294" height="125"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="740-CD-meh" userLabel="Choice">
+                                        <rect key="frame" x="0.0" y="281" width="294" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Eq6-WK-sNY" firstAttribute="height" secondItem="Hsv-wc-E4m" secondAttribute="height" multiplier="0.3" id="4os-Xw-N5v"/>
+                                    <constraint firstItem="740-CD-meh" firstAttribute="centerX" secondItem="Eq6-WK-sNY" secondAttribute="centerX" id="FDj-lF-cTG"/>
+                                    <constraint firstAttribute="trailing" secondItem="740-CD-meh" secondAttribute="trailing" id="HSK-TI-ceL"/>
                                     <constraint firstItem="yK8-3P-NQE" firstAttribute="width" secondItem="Hsv-wc-E4m" secondAttribute="width" id="ME3-RA-GZQ"/>
+                                    <constraint firstItem="740-CD-meh" firstAttribute="top" secondItem="Eq6-WK-sNY" secondAttribute="bottom" constant="10" id="PZV-QK-wmA"/>
+                                    <constraint firstItem="740-CD-meh" firstAttribute="leading" secondItem="Hsv-wc-E4m" secondAttribute="leading" id="Pbg-xj-xyA"/>
                                     <constraint firstItem="yK8-3P-NQE" firstAttribute="centerX" secondItem="Hsv-wc-E4m" secondAttribute="centerX" id="W8F-cr-bhj"/>
                                     <constraint firstItem="Eq6-WK-sNY" firstAttribute="centerY" secondItem="Hsv-wc-E4m" secondAttribute="centerY" id="ege-FO-Mh6"/>
                                     <constraint firstItem="yK8-3P-NQE" firstAttribute="top" secondItem="Hsv-wc-E4m" secondAttribute="top" constant="20" id="fsn-lU-SOi"/>
@@ -156,9 +166,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rps" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-LI-E3K">
-                                        <rect key="frame" x="0.0" y="150" width="294" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rps" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-LI-E3K">
+                                        <rect key="frame" x="0.0" y="146" width="294" height="125"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-eJ-gfJ">
+                                        <rect key="frame" x="0.0" y="281" width="294" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -167,7 +183,10 @@
                                     <constraint firstItem="x1c-DX-UKG" firstAttribute="width" secondItem="wbO-wT-xO5" secondAttribute="width" id="CQp-Fq-WYG"/>
                                     <constraint firstAttribute="trailing" secondItem="x1c-DX-UKG" secondAttribute="trailing" id="N8t-pH-4js"/>
                                     <constraint firstItem="dfS-LI-E3K" firstAttribute="centerX" secondItem="wbO-wT-xO5" secondAttribute="centerX" id="QAP-Oc-atv"/>
+                                    <constraint firstItem="Zuc-eJ-gfJ" firstAttribute="top" secondItem="dfS-LI-E3K" secondAttribute="bottom" constant="10" id="TCO-h1-lP3"/>
                                     <constraint firstItem="dfS-LI-E3K" firstAttribute="height" secondItem="wbO-wT-xO5" secondAttribute="height" multiplier="0.3" id="ctY-Iv-B3j"/>
+                                    <constraint firstItem="Zuc-eJ-gfJ" firstAttribute="leading" secondItem="wbO-wT-xO5" secondAttribute="leading" id="h3u-ND-H3D"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zuc-eJ-gfJ" secondAttribute="trailing" id="kzb-O2-zoN"/>
                                     <constraint firstItem="x1c-DX-UKG" firstAttribute="leading" secondItem="wbO-wT-xO5" secondAttribute="leading" id="n4y-pG-mor"/>
                                     <constraint firstItem="dfS-LI-E3K" firstAttribute="centerY" secondItem="wbO-wT-xO5" secondAttribute="centerY" id="rB6-mk-xwM"/>
                                 </constraints>
@@ -187,10 +206,22 @@
                                             <action selector="usersChoiceTapped:" destination="ya5-GZ-Gto" eventType="valueChanged" id="Qge-5b-3Z4"/>
                                         </connections>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcQ-3e-5dc">
+                                        <rect key="frame" x="513" y="12" width="72" height="36"/>
+                                        <color key="backgroundColor" red="1" green="0.83103257870000002" blue="0.29434629550000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Replay">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="replayButtonTapped:" destination="ya5-GZ-Gto" eventType="touchUpInside" id="xji-ff-9oP"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcd-99-zmO">
-                                        <rect key="frame" x="513" y="15" width="72" height="30"/>
+                                        <rect key="frame" x="513" y="12" width="72" height="36"/>
+                                        <color key="backgroundColor" red="1" green="0.83103257870000002" blue="0.29434629550000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="I'm Ready!">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="userReadyTapped:" destination="ya5-GZ-Gto" eventType="touchUpInside" id="sMp-e8-yEE"/>
@@ -200,9 +231,13 @@
                                 <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qcd-99-zmO" secondAttribute="trailing" constant="15" id="5Fr-ZX-C0V"/>
+                                    <constraint firstItem="LcQ-3e-5dc" firstAttribute="centerY" secondItem="qcd-99-zmO" secondAttribute="centerY" id="HZr-nS-JZQ"/>
                                     <constraint firstItem="8W3-dB-2Rk" firstAttribute="centerY" secondItem="6nm-Os-SZz" secondAttribute="centerY" id="Hka-50-Mte"/>
                                     <constraint firstItem="qcd-99-zmO" firstAttribute="centerY" secondItem="8W3-dB-2Rk" secondAttribute="centerY" id="LaE-cX-d6u"/>
+                                    <constraint firstItem="LcQ-3e-5dc" firstAttribute="width" secondItem="qcd-99-zmO" secondAttribute="width" id="PyF-ui-wS1"/>
                                     <constraint firstItem="8W3-dB-2Rk" firstAttribute="leading" secondItem="6nm-Os-SZz" secondAttribute="leading" constant="20" id="Uky-Vm-BJH"/>
+                                    <constraint firstItem="LcQ-3e-5dc" firstAttribute="height" secondItem="qcd-99-zmO" secondAttribute="height" id="Zqd-QJ-8cT"/>
+                                    <constraint firstItem="LcQ-3e-5dc" firstAttribute="centerX" secondItem="qcd-99-zmO" secondAttribute="centerX" id="mFn-xh-vDD"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battle!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21u-aQ-Efm">
@@ -233,10 +268,13 @@
                     </view>
                     <connections>
                         <outlet property="firstPlayerChoice" destination="Eq6-WK-sNY" id="vYG-Mr-w9c"/>
+                        <outlet property="firstPlayerChoiceName" destination="740-CD-meh" id="iiy-Ev-zPj"/>
                         <outlet property="firstPlayerLabel" destination="yK8-3P-NQE" id="Tj1-KI-egf"/>
                         <outlet property="gameResult" destination="21u-aQ-Efm" id="Awy-WY-IkR"/>
                         <outlet property="opponentChoice" destination="dfS-LI-E3K" id="aGZ-zF-Oem"/>
+                        <outlet property="opponentChoiceName" destination="Zuc-eJ-gfJ" id="Y6B-xy-SDb"/>
                         <outlet property="opponentLabel" destination="x1c-DX-UKG" id="Bl0-N3-ovY"/>
+                        <outlet property="replayButton" destination="LcQ-3e-5dc" id="fXT-Jm-CM4"/>
                         <outlet property="userReadyOutlet" destination="qcd-99-zmO" id="kRr-L9-ZwM"/>
                         <outlet property="usersChoice" destination="8W3-dB-2Rk" id="4ga-2q-Ndp"/>
                     </connections>

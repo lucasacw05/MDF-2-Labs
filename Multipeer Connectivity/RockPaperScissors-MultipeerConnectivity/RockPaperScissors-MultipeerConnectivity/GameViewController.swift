@@ -14,10 +14,12 @@ class GameViewController: UIViewController {
     //Label and image view to represent the user's side
     @IBOutlet weak var firstPlayerLabel: UILabel!
     @IBOutlet weak var firstPlayerChoice: UIImageView!
+    @IBOutlet weak var firstPlayerChoiceName: UILabel!
     
     //Label and image view to represent the opponent's side
     @IBOutlet weak var opponentLabel: UILabel!
     @IBOutlet weak var opponentChoice: UIImageView!
+    @IBOutlet weak var opponentChoiceName: UILabel!
     
     //Button to determined if the user is sure about his choice and wants to proceed with the game.
     @IBOutlet weak var userReadyOutlet: UIButton!
@@ -28,6 +30,9 @@ class GameViewController: UIViewController {
     //Segmented control to determine the user's choice
     @IBOutlet weak var usersChoice: UISegmentedControl!
     
+    //Outlet for replay button
+    @IBOutlet weak var replayButton: UIButton!
+    
     //PeerID and Session
     var peerID: MCPeerID! //Device ID
     var session: MCSession! //Connection between devices
@@ -36,6 +41,9 @@ class GameViewController: UIViewController {
     //Default User's and opponent's selection
     var userSelection = Selection(segment: 0, image: UIImage(named: "rock1")!, name: "Rock")
     var opponentSelection = Selection(segment: 0, image: UIImage(named: "rock1")!, name: "")
+    
+    //Boolean to correctly check if a replay is going to happen so that the correct checks could be done without messing up the game logic.
+    var wasReplayAlreadyTapped = "false"
     
     
     override func viewDidLoad() {
@@ -51,7 +59,68 @@ class GameViewController: UIViewController {
         
         //Sets the initial selection of the user based on how the segmented control starts
         firstPlayerChoice.image = userSelection.image
+        
+        //Informative label
+        gameResult.text = "Are you prepared for Battle?"
+        
+        //Start with replay button not showing up
+        replayButton.enabled = false
+        replayButton.hidden = true
     }
+    
+    
+    
+    @IBAction func replayButtonTapped(sender: AnyObject) {
+        //Reset userSelection and opponent Selection
+        userSelection.segment = 0
+        userSelection.image = UIImage(named: "rock1")
+        userSelection.name = "Rock"
+        
+        opponentSelection.segment = 0
+        opponentSelection.image = UIImage(named: "rock1")
+        opponentSelection.name = ""
+        
+        //Update Users Side
+        firstPlayerChoice.image = userSelection.image
+        firstPlayerChoiceName.text = userSelection.name
+        
+        //Update opponent side
+        opponentChoice.image = UIImage(named: "rps")
+        opponentChoiceName.text = "?"
+        
+        //Update segmented control
+        usersChoice.selectedSegmentIndex = userSelection.segment
+        usersChoice.enabled = true
+        
+        //Update labels
+        firstPlayerLabel.text = "You"
+        gameResult.text = "Are you prepared for Battle?"
+        
+        //Disable replay button
+        replayButton.enabled = false
+        replayButton.hidden = true
+        
+        //Enable I'm ready button
+        userReadyOutlet.enabled = true
+        userReadyOutlet.hidden = false
+        
+        
+        //Update data of the "Boolean"
+        wasReplayAlreadyTapped = "true"
+ 
+        //Send data to peer as soon as the user taps the replay button trying to avoid logic errors
+        if let replayBool = wasReplayAlreadyTapped.dataUsingEncoding(NSUTF8StringEncoding) {
+            
+            do {
+                try session.sendData(replayBool, toPeers: session.connectedPeers, withMode: MCSessionSendDataMode.Reliable)
+                print("Information about boolean was sent")
+            } catch {
+                print(error)
+            }
+        }
+        
+    }
+    
     
     @IBAction func usersChoiceTapped(sender: AnyObject) {
         print("User chose index: \(usersChoice.selectedSegmentIndex)")
@@ -62,23 +131,28 @@ class GameViewController: UIViewController {
             userSelection.segment = usersChoice.selectedSegmentIndex
             userSelection.image = UIImage(named: "rock1")!
             userSelection.name = "Rock"
-            //Also updates the image shown in his side of the VC
+            
+            //Also updates the image and label shown in his side of the VC
             firstPlayerChoice.image = userSelection.image
+            firstPlayerChoiceName.text = userSelection.name
             
             
         case 1:
             userSelection.segment = usersChoice.selectedSegmentIndex
             userSelection.image = UIImage(named: "paper1")!
             userSelection.name = "Paper"
-            //Also updates the image shown in his side of the VC
+            
+            //Also updates the image and label shown in his side of the VC
             firstPlayerChoice.image = userSelection.image
+            firstPlayerChoiceName.text = userSelection.name
         
         case 2:
             userSelection.segment = usersChoice.selectedSegmentIndex
             userSelection.image = UIImage(named: "scissors1")!
             userSelection.name = "Scissor"
-            //Also updates the image shown in his side of the VC
+            //Also updates the image and label shown in his side of the VC
             firstPlayerChoice.image = userSelection.image
+            firstPlayerChoiceName.text = userSelection.name
             
         default:
             break
@@ -110,13 +184,73 @@ class GameViewController: UIViewController {
             print(error)
         }
         
+        //In case the user is ready and the opponent isn't, update the informative label
+        gameResult.text = "Waiting for the opponent to be ready."
+        
+        //Checking against the opponent name and against the userReady button. If this conditional is met, it means that both the user and the opponent are ready and are going to see the result of the match.  It is important to notice that this If check happens twice: one when the user taps the "I'm Ready" button and sends the data, and the other one when the user receives the data. Thinking this way allowed me to always make them to be in the correct spot also knowing what is happening in the other side with their opponent.
         if (self.opponentSelection.name != "") && (self.userReadyOutlet.enabled == false) {
             
             self.opponentChoice.image = opponentSelection.image
+            self.opponentChoiceName.text = opponentSelection.name
             
-            //Do checkings against who won or lost
+            //This is to check if there was any Tie.
+            if (self.userSelection.segment == 0) && (self.opponentSelection.segment == 0) || (self.userSelection.segment == 1) && (self.opponentSelection.segment == 1) || (self.userSelection.segment == 2) && (self.opponentSelection.segment == 2){
+                
+                self.gameResult.text = "What a Great TIE!!!"
             
+                
+                //If user chooses rock and opponent paper
+            } else if (self.userSelection.segment == 0) && (self.opponentSelection.segment == 1) {
+                
+                self.gameResult.text = "Paper dominates Rock and Wins!"
+                self.firstPlayerLabel.text = "You Lost!"
+                
+                
+                //If user chooses paper and opponent rock
+            } else if (self.userSelection.segment == 1) && (self.opponentSelection.segment == 0) {
+                
+                self.gameResult.text = "Paper dominates Rock and Wins!"
+                self.firstPlayerLabel.text = "You Won!"
+                
+                
+                
+                //If user chooses rock and opponent scissors
+            } else if (self.userSelection.segment == 0) && (self.opponentSelection.segment == 2) {
+                
+                self.gameResult.text = "Rock Smashes Scissors!"
+                self.firstPlayerLabel.text = "You Won!"
+
+                
+                //If user chooses scissors and opponent rock
+            } else if (self.userSelection.segment == 2) && (self.opponentSelection.segment == 0) {
+                
+                self.gameResult.text = "Rock Smashes Scissors!!"
+                self.firstPlayerLabel.text = "You Lost!"
+                
+                
+                
+                //If user chooses scissors and opponent paper
+            } else if (self.userSelection.segment == 2) && (self.opponentSelection.segment == 1) {
+                
+                self.gameResult.text = "Scissors cuts Paper!!"
+                self.firstPlayerLabel.text = "You Won!"
+                
+                
+                //If user chooses paper and opponent scissors
+            } else if (self.userSelection.segment == 1) && (self.opponentSelection.segment == 2) {
+                
+                self.gameResult.text = "Scissors cuts Paper!!"
+                self.firstPlayerLabel.text = "You Lost!"
+                
+                
+            }
             
+            //Hide userReadyButton
+            self.userReadyOutlet.hidden = true
+            
+            //Enable replay button
+            self.replayButton.enabled = true
+            self.replayButton.hidden = false
         }
     }
 }
@@ -126,31 +260,16 @@ extension GameViewController: MCSessionDelegate {
     
     // Remote peer changed state.
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
-        
-//        dispatch_async(dispatch_get_main_queue()) {
-//
-////            if self.navigationController?.visibleViewController as? ViewController == true {
-////            }
-//            
-//            if let firstVC = self.navigationController?.viewControllers[0] as? ViewController {
-//            
-//            if state == MCSessionState.Connected {
-//                
-//                //self.statusLabel.text = "Status: Connected"
-//                //self.playButton.enabled = true
-//                firstVC.statusLabel.text = "ra"
-//                
-//            } else if state == MCSessionState.NotConnected {
-//              
-//                self.gameResult.text = "Connection Lost. Go back an try again."
-// 
-//            }
-//            }
-//        }
     }
     
     //Function for receiving data
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
+    
+        //Build the boolean data variable
+        if let replayBool: String = String(data: data, encoding: NSUTF8StringEncoding) {
+            
+            wasReplayAlreadyTapped = replayBool
+        }
         
         //Optional biding to make sure the object exists and won't crash the app
         if let opponentData = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Selection {
@@ -167,34 +286,81 @@ extension GameViewController: MCSessionDelegate {
             
             dispatch_async(dispatch_get_main_queue(), { 
                 
+                //Update informative label
+                self.gameResult.text = "Your opponent is ready."
+                
+                //Checking against the opponent name and against the userReady button. If this conditional is met, it means that both the user and the opponent are ready and are going to see the result of the match. It is important to notice that this If check happens twice: one when the user taps the "I'm Ready" button and sends the data, and the other one when the user receives the data. Thinking this way allowed me to always make them to be in the correct spot also knowing what is happening in the other side with their opponent.
                 if (self.opponentSelection.name != "") && (self.userReadyOutlet.enabled == false) {
                 
                     self.opponentChoice.image = opponentData.image
+                    self.opponentChoiceName.text = self.opponentSelection.name
+                    
+                    //This is to check if there was any Tie.
+                    if (self.userSelection.segment == 0) && (self.opponentSelection.segment == 0) || (self.userSelection.segment == 1) && (self.opponentSelection.segment == 1) || (self.userSelection.segment == 2) && (self.opponentSelection.segment == 2){
+                        
+                        self.gameResult.text = "What a Great TIE!!!"
+                    
+                        //If user chooses rock and opponent paper
+                    } else if (self.userSelection.segment == 0) && (self.opponentSelection.segment == 1) {
+                        
+                        self.gameResult.text = "Paper dominates Rock and Wins!"
+                        self.firstPlayerLabel.text = "You Lost!"
+                        
+                        
+                        //If user chooses paper and opponent rock
+                    } else if (self.userSelection.segment == 1) && (self.opponentSelection.segment == 0) {
+                        
+                        self.gameResult.text = "Paper dominates Rock and Wins!"
+                        self.firstPlayerLabel.text = "You Won!"
+                        
+                        
+                        //If user chooses rock and opponent scissors
+                    } else if (self.userSelection.segment == 0) && (self.opponentSelection.segment == 2) {
+                        
+                        self.gameResult.text = "Rock Smashes Scissors!"
+                        self.firstPlayerLabel.text = "You Won!"
+                        
+                        
+                        //If user chooses scissors and opponent rock
+                    } else if (self.userSelection.segment == 2) && (self.opponentSelection.segment == 0) {
+                        
+                        self.gameResult.text = "Rock Smashes Scissors!!"
+                        self.firstPlayerLabel.text = "You Lost!"
+                        
+                        
+                        //If user chooses scissors and opponent paper
+                    } else if (self.userSelection.segment == 2) && (self.opponentSelection.segment == 1) {
+                        
+                        self.gameResult.text = "Scissors cuts Paper!!"
+                        self.firstPlayerLabel.text = "You Won!"
+                        
+                        
+                        //If user chooses paper and opponent scissors
+                    } else if (self.userSelection.segment == 1) && (self.opponentSelection.segment == 2) {
+                        
+                        self.gameResult.text = "Scissors cuts Paper!!"
+                        self.firstPlayerLabel.text = "You Lost!"
+                        
+                    }
+                    //Hide userReadyButton
+                    self.userReadyOutlet.hidden = true
+                    
+                    //Enable replay button
+                    self.replayButton.enabled = true
+                    self.replayButton.hidden = false
                 }
-                
-                
             })
-            
         }
-        
     }
     
     // Received a byte stream from remote peer.
-    
-    func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        
-    }
+    func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {}
     
     // Start receiving a resource from remote peer.
-    
-    func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {
-        
-    }
+    func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {}
     
     // Finished receiving a resource from remote peer and saved the content
     // in a temporary location - the app is responsible for moving the file
     // to a permanent location within its sandbox.
-    func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?){
-        
-    }
+    func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?){}
 }
