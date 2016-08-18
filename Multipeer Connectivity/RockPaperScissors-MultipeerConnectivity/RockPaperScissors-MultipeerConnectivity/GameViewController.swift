@@ -16,11 +16,14 @@ class GameViewController: UIViewController {
     @IBOutlet weak var firstPlayerChoice: UIImageView!
     @IBOutlet weak var firstPlayerChoiceName: UILabel!
     @IBOutlet weak var firstPlayerScore: UILabel!
+    var firstPlayerScoreInt : Int = 0
     
     //Label and image view to represent the opponent's side
     @IBOutlet weak var opponentLabel: UILabel!
     @IBOutlet weak var opponentChoice: UIImageView!
     @IBOutlet weak var opponentChoiceName: UILabel!
+    @IBOutlet weak var opponentScore: UILabel!
+    var opponentScoreInt : Int = 0
     
     //Button to determined if the user is sure about his choice and wants to proceed with the game.
     @IBOutlet weak var userReadyOutlet: UIButton!
@@ -41,8 +44,6 @@ class GameViewController: UIViewController {
     //Default User's and opponent's selection
     var userSelection = Selection(segment: 0, image: UIImage(named: "rock1")!, name: "Rock")
     var opponentSelection = Selection(segment: 0, image: UIImage(named: "rock1")!, name: "")
-    
-    //TODO: - Create SCORE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,6 +191,8 @@ class GameViewController: UIViewController {
                 
                 self.gameResult.text = "Paper dominates Rock and Wins!"
                 self.firstPlayerLabel.text = "You Lost!"
+                self.opponentScoreInt += 1
+                self.opponentScore.text = "Score: \(self.opponentScoreInt)"
                 
                 
                 //If user chooses paper and opponent rock
@@ -197,6 +200,8 @@ class GameViewController: UIViewController {
                 
                 self.gameResult.text = "Paper dominates Rock and Wins!"
                 self.firstPlayerLabel.text = "You Won!"
+                self.firstPlayerScoreInt += 1
+                self.firstPlayerScore.text = "Score: \(self.firstPlayerScoreInt)"
                 
                 
                 
@@ -205,6 +210,8 @@ class GameViewController: UIViewController {
                 
                 self.gameResult.text = "Rock Smashes Scissors!"
                 self.firstPlayerLabel.text = "You Won!"
+                self.firstPlayerScoreInt += 1
+                self.firstPlayerScore.text = "Score: \(self.firstPlayerScoreInt)"
 
                 
                 //If user chooses scissors and opponent rock
@@ -212,6 +219,8 @@ class GameViewController: UIViewController {
                 
                 self.gameResult.text = "Rock Smashes Scissors!!"
                 self.firstPlayerLabel.text = "You Lost!"
+                self.opponentScoreInt += 1
+                self.opponentScore.text = "Score: \(self.opponentScoreInt)"
                 
                 
                 
@@ -220,6 +229,8 @@ class GameViewController: UIViewController {
                 
                 self.gameResult.text = "Scissors cuts Paper!!"
                 self.firstPlayerLabel.text = "You Won!"
+                self.firstPlayerScoreInt += 1
+                self.firstPlayerScore.text = "Score: \(self.firstPlayerScoreInt)"
                 
                 
                 //If user chooses paper and opponent scissors
@@ -227,6 +238,8 @@ class GameViewController: UIViewController {
                 
                 self.gameResult.text = "Scissors cuts Paper!!"
                 self.firstPlayerLabel.text = "You Lost!"
+                self.opponentScoreInt += 1
+                self.opponentScore.text = "Score: \(self.opponentScoreInt)"
                 
                 
             }
@@ -286,6 +299,8 @@ extension GameViewController: MCSessionDelegate {
                         
                         self.gameResult.text = "Paper dominates Rock and Wins!"
                         self.firstPlayerLabel.text = "You Lost!"
+                        self.opponentScoreInt += 1
+                        self.opponentScore.text = "Score: \(self.opponentScoreInt)"
                         
                         
                         //If user chooses paper and opponent rock
@@ -293,6 +308,8 @@ extension GameViewController: MCSessionDelegate {
                         
                         self.gameResult.text = "Paper dominates Rock and Wins!"
                         self.firstPlayerLabel.text = "You Won!"
+                        self.firstPlayerScoreInt += 1
+                        self.firstPlayerScore.text = "Score: \(self.firstPlayerScoreInt)"
                         
                         
                         //If user chooses rock and opponent scissors
@@ -300,6 +317,8 @@ extension GameViewController: MCSessionDelegate {
                         
                         self.gameResult.text = "Rock Smashes Scissors!"
                         self.firstPlayerLabel.text = "You Won!"
+                        self.firstPlayerScoreInt += 1
+                        self.firstPlayerScore.text = "Score: \(self.firstPlayerScoreInt)"
                         
                         
                         //If user chooses scissors and opponent rock
@@ -307,6 +326,8 @@ extension GameViewController: MCSessionDelegate {
                         
                         self.gameResult.text = "Rock Smashes Scissors!!"
                         self.firstPlayerLabel.text = "You Lost!"
+                        self.opponentScoreInt += 1
+                        self.opponentScore.text = "Score: \(self.opponentScoreInt)"
                         
                         
                         //If user chooses scissors and opponent paper
@@ -314,6 +335,8 @@ extension GameViewController: MCSessionDelegate {
                         
                         self.gameResult.text = "Scissors cuts Paper!!"
                         self.firstPlayerLabel.text = "You Won!"
+                        self.firstPlayerScoreInt += 1
+                        self.firstPlayerScore.text = "Score: \(self.firstPlayerScoreInt)"
                         
                         
                         //If user chooses paper and opponent scissors
@@ -321,6 +344,8 @@ extension GameViewController: MCSessionDelegate {
                         
                         self.gameResult.text = "Scissors cuts Paper!!"
                         self.firstPlayerLabel.text = "You Lost!"
+                        self.opponentScoreInt += 1
+                        self.opponentScore.text = "Score: \(self.opponentScoreInt)"
                         
                     }
                     //Hide userReadyButton

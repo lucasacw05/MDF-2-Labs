@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
-
+                //Conforming to NSObject protocol and NSCoding protocol
 class Selection: NSObject, NSCoding {
-    
+    //Store properties
     var segment: Int
     var image: UIImage?
     var name: String
@@ -21,12 +21,13 @@ class Selection: NSObject, NSCoding {
         self.name = name
     }
     
-    //MARK:- NSCoding
+    //MARK:- NSCoding - Implementation of the required parameters. (Decoder and Encoder)
     required convenience init?(coder decoder: NSCoder) {
         let segment = decoder.decodeIntForKey("segment")
         let image = decoder.decodeObjectForKey("image") as? UIImage
         let name = decoder.decodeObjectForKey("name") as? String
         
+        //Initializer
         self.init(segment: Int(segment), image: image!, name: name!)
         
     }
