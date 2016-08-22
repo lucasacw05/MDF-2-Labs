@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rps" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-HS-5da">
-                                <rect key="frame" x="0.0" y="93" width="600" height="413"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="413" id="JrE-0G-WJ1"/>
-                                    <constraint firstAttribute="width" constant="600" id="f09-74-5w3"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2as-og-OCd">
                                 <rect key="frame" x="10" y="570" width="5" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -38,16 +31,51 @@
                                     <action selector="playWithFriend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15E-Gj-4Jd"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rps" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-HS-5da">
+                                <rect key="frame" x="0.0" y="93" width="600" height="413"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="413" id="JrE-0G-WJ1"/>
+                                    <constraint firstAttribute="width" constant="350" id="LeT-eB-hFJ"/>
+                                    <constraint firstAttribute="width" constant="600" id="f09-74-5w3"/>
+                                    <constraint firstAttribute="height" constant="250" id="fq0-js-Q0D"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LeT-eB-hFJ"/>
+                                        <exclude reference="fq0-js-Q0D"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="JrE-0G-WJ1"/>
+                                        <include reference="LeT-eB-hFJ"/>
+                                        <exclude reference="f09-74-5w3"/>
+                                        <include reference="fq0-js-Q0D"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oyu-IQ-LQc" firstAttribute="top" secondItem="ZmJ-HS-5da" secondAttribute="bottom" constant="20" id="0h8-oG-UHB"/>
                             <constraint firstItem="ZmJ-HS-5da" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J0u-Ts-65e"/>
                             <constraint firstItem="oyu-IQ-LQc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nc1-Hg-0K2"/>
+                            <constraint firstItem="ZmJ-HS-5da" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="bWt-Je-dEg"/>
                             <constraint firstItem="ZmJ-HS-5da" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cOo-Hs-fnD"/>
                             <constraint firstItem="2as-og-OCd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="nXJ-Nh-VB6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2as-og-OCd" secondAttribute="bottom" constant="10" id="uHn-k7-Ye3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bWt-Je-dEg"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="J0u-Ts-65e"/>
+                                <include reference="bWt-Je-dEg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Ovr-FA-QDL">
                         <barButtonItem key="leftBarButtonItem" title="Connect with Friend" id="ujd-bw-0dH">
