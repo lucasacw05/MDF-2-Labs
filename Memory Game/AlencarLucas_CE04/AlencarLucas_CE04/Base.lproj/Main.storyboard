@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -30,7 +29,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coverscreen_background" translatesAutoresizingMaskIntoConstraints="NO" id="5He-BT-uI0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F879CF56-C7DC-47E9-8BEB-B7F92DCFAD83" translatesAutoresizingMaskIntoConstraints="NO" id="OpG-4O-sdF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="811118BE-F961-4A6B-88B8-98BD32D1DC29" translatesAutoresizingMaskIntoConstraints="NO" id="OpG-4O-sdF">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coverscreen_background" translatesAutoresizingMaskIntoConstraints="NO" id="GkX-Kv-7oP" userLabel="Background Image Landscape">
@@ -1927,8 +1926,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="640" height="960"/>
-        <image name="F879CF56-C7DC-47E9-8BEB-B7F92DCFAD83" width="640" height="960">
+        <image name="811118BE-F961-4A6B-88B8-98BD32D1DC29" width="640" height="960">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -32721,6 +32719,7 @@ iAAcLo0AHC6VABwumAAcLp0AHC6sABwusAAcLrcAHC6/ABwuzAAcLtEAHC7TABwu1QAcLtoAHC7iABwu
 5QAcLuoAHC7yABwu9QAcLwcAHC8KABwvDwAAAAAAAAQBAAAAAAAAAD4AAAAAAAAAAAAAAAAAHC8RA
 </mutableData>
         </image>
+        <image name="Background" width="640" height="960"/>
         <image name="UI_back_button" width="163" height="122"/>
         <image name="UI_storescreen_tab" width="635" height="534"/>
         <image name="button_play" width="360" height="139"/>

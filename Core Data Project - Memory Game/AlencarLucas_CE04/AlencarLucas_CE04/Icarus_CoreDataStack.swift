@@ -51,7 +51,7 @@ class Icarus_CoreDataStack {
         
         // b. Create a new URL file path in which to save this application's data by appending to the directory path.
         //    This is the rough equivalent of saying "path = Documents/CSStack_Data"
-        let storeURL = directories[0].URLByAppendingPathComponent("CDStack_Data")
+        let storeURL = directories[0].URLByAppendingPathComponent("Icarus_Data")
         
         // c. Create a dictionary of options
         let storeOptions = [NSMigratePersistentStoresAutomaticallyOption: true]

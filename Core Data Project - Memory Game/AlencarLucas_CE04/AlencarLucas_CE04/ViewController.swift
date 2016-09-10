@@ -28,5 +28,19 @@ class ViewController: UIViewController {
             destination.managedObjectContext = managedObjectContext
         }
     }
+    
+   @IBAction func backToHome(segue: UIStoryboardSegue) {
+    
+    if segue.identifier == "cancel" {
+        print("canceled")
+    } else if segue.identifier == "save" {
+        
+        //let sourceVC
+        
+        print("saved")
+    }
+    
+
+    }
 }
 

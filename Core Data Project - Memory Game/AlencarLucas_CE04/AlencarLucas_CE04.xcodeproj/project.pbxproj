@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871857901D6E37DB000712F7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718578F1D6E37DB000712F7 /* CustomTableViewCell.swift */; };
 		872FE7811D5B7D16002BCE27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FE7801D5B7D16002BCE27 /* GameViewController.swift */; };
 		874B4FCF1D6B75FC004CCDBC /* Icarus_CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874B4FCE1D6B75FC004CCDBC /* Icarus_CoreDataStack.swift */; };
 		874B4FD21D6B7690004CCDBC /* CoreDataDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 874B4FD01D6B7690004CCDBC /* CoreDataDM.xcdatamodeld */; };
 		874B4FD51D6B802F004CCDBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 874B4FD41D6B802F004CCDBC /* CoreData.framework */; };
 		874B4FD81D6B8F3E004CCDBC /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874B4FD71D6B8F3E004CCDBC /* LeaderBoardTableViewController.swift */; };
+		874B4FDB1D6B9907004CCDBC /* SaveScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874B4FDA1D6B9907004CCDBC /* SaveScoreViewController.swift */; };
 		875436271D5EA0A7006D51A8 /* pointScored.wav in Resources */ = {isa = PBXBuildFile; fileRef = 875436261D5EA0A7006D51A8 /* pointScored.wav */; };
 		875436291D5EA2BC006D51A8 /* finish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 875436281D5EA2BC006D51A8 /* finish.wav */; };
 		8754362B1D5EA34A006D51A8 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8754362A1D5EA34A006D51A8 /* click.wav */; };
@@ -24,11 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8718578F1D6E37DB000712F7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		872FE7801D5B7D16002BCE27 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = AlencarLucas_CE04/GameViewController.swift; sourceTree = "<group>"; };
 		874B4FCE1D6B75FC004CCDBC /* Icarus_CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icarus_CoreDataStack.swift; sourceTree = "<group>"; };
 		874B4FD11D6B7690004CCDBC /* CoreDataDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDM.xcdatamodel; sourceTree = "<group>"; };
 		874B4FD41D6B802F004CCDBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		874B4FD71D6B8F3E004CCDBC /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
+		874B4FDA1D6B9907004CCDBC /* SaveScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveScoreViewController.swift; sourceTree = "<group>"; };
 		875436261D5EA0A7006D51A8 /* pointScored.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pointScored.wav; sourceTree = "<group>"; };
 		875436281D5EA2BC006D51A8 /* finish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finish.wav; sourceTree = "<group>"; };
 		8754362A1D5EA34A006D51A8 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				872FE7801D5B7D16002BCE27 /* GameViewController.swift */,
 				87ED35D31D58C18300529941 /* ViewController.swift */,
 				87ED35D11D58C18300529941 /* AppDelegate.swift */,
+				874B4FDA1D6B9907004CCDBC /* SaveScoreViewController.swift */,
+				8718578F1D6E37DB000712F7 /* CustomTableViewCell.swift */,
 			);
 			name = "Code Files";
 			path = ..;
@@ -203,9 +209,11 @@
 			files = (
 				874B4FCF1D6B75FC004CCDBC /* Icarus_CoreDataStack.swift in Sources */,
 				87ED35D41D58C18300529941 /* ViewController.swift in Sources */,
+				871857901D6E37DB000712F7 /* CustomTableViewCell.swift in Sources */,
 				872FE7811D5B7D16002BCE27 /* GameViewController.swift in Sources */,
 				874B4FD81D6B8F3E004CCDBC /* LeaderBoardTableViewController.swift in Sources */,
 				874B4FD21D6B7690004CCDBC /* CoreDataDM.xcdatamodeld in Sources */,
+				874B4FDB1D6B9907004CCDBC /* SaveScoreViewController.swift in Sources */,
 				87ED35D21D58C18300529941 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

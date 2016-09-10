@@ -32,6 +32,11 @@ class GameViewController: UIViewController {
     var gameTimerSeconds = 0
     var gameTimerIsOn = false
     
+    //Number of moves
+    var numberOfMoves = 0
+    
+    //To make things easier, the date is being saved when the user finishes the fame in the SaveScore view controller. I figured out that I didn't have to do anything with it here.
+    
     //Five seconds counter
     @IBOutlet weak var fiveSecCounter: UILabel!
     //Five second timer and countDown in seconds
@@ -159,7 +164,7 @@ class GameViewController: UIViewController {
         //Disables every button to prevent taps while the game don't start.
         for button in cardButtonOutlet {
             button.enabled = false
-            print(button.tag)
+            //print(button.tag)
         }
     }
     
@@ -200,7 +205,7 @@ class GameViewController: UIViewController {
             //Enable the buttons again
             for button in cardButtonOutlet {
                 button.enabled = true
-                print(button.tag)
+                //print(button.tag)
             }
         }
     }
@@ -243,7 +248,7 @@ class GameViewController: UIViewController {
             backOfTheCard[firstImageLocation].hidden = false
             backOfTheCard[secondImageLocation].hidden = false
             
-            print("Data being reseted")
+            //print("Data being reseted")
             //RESET DATA
             firstImageData = ""
             firstImageSelection = false
@@ -258,7 +263,7 @@ class GameViewController: UIViewController {
     
     @IBAction func cardTapped(sender: AnyObject) {
         
-        print("It worked")
+        //print("It worked")
         
         //Play Sound
         clickAP.play()
@@ -275,7 +280,7 @@ class GameViewController: UIViewController {
                 
                 //Save the data
                 firstImageData = identifier
-                print("ID:\(firstImageData)")
+                //print("ID:\(firstImageData)")
                 
                 //"Flip" card and disable it being clicked again
                 backOfTheCard[location].hidden = true
@@ -295,7 +300,7 @@ class GameViewController: UIViewController {
                 
                 //Save the data
                 secondImageData = identifier
-                print("ID:\(secondImageData)")
+                //print("ID:\(secondImageData)")
                 
                 //"Flip" card and disable it being clicked again
                 backOfTheCard[location].hidden = true
@@ -308,6 +313,10 @@ class GameViewController: UIViewController {
             
             
             if firstImageSelection == true && secondImageSelection && true {
+                
+                //Add 1 move value to the number of moves variable
+                numberOfMoves += 1
+                print("Number of moves: \(numberOfMoves)")
                 
                 //Check agains the image identifiers, and if they're equal, eliminate the card match
                 if firstImageData == secondImageData {
@@ -330,7 +339,7 @@ class GameViewController: UIViewController {
                     //Store the data of the button so that when the match doesn't happen, The timer could disable all the buttons, enable all of them again when the time is over, then disabling only those other buttons that the card match already happened, preventing the user to click something that he can't see anymore
                     let buttonOfSecondSelection = cardButtonOutlet[secondImageLocation]
                     arrayOfDisabledButtons.append(buttonOfSecondSelection)
-                    print("It worked")
+                    //print("It worked")
                     
                     //RESET DATA
                     firstImageData = ""
@@ -349,7 +358,7 @@ class GameViewController: UIViewController {
                         
                         //Finish Game
                         if arrayOfDisabledButtons.count == 20  {
-                            
+
                             //Turn off timer
                             gameTimerIsOn = false
                             
@@ -358,8 +367,15 @@ class GameViewController: UIViewController {
                             
                             //Present Alert to inform the user finished the game
                             let alert = UIAlertController(title: "Congrats!!", message: "You Finished the Game in \(gameTimerSeconds) Seconds!", preferredStyle: .Alert)
-                            let alertAction = UIAlertAction(title: "Done", style: .Default, handler: nil)
-                            alert.addAction(alertAction)
+                            let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
+                            
+                            let saveAction = UIAlertAction(title: "Save Score", style: .Default, handler: { (UIAlertAction) in
+                                self.performSegueWithIdentifier("saveScoreSegue", sender: self)
+                            })
+                            
+                            alert.addAction(dismissAction)
+                            alert.addAction(saveAction)
+                            
                             presentViewController(alert, animated: true, completion: nil)
                         }
                     }
@@ -377,8 +393,15 @@ class GameViewController: UIViewController {
                             
                             //Present Alert to inform the user finished the game
                             let alert = UIAlertController(title: "Congrats!!", message: "You Finished the Game in \(gameTimerSeconds) Seconds!", preferredStyle: .Alert)
-                            let alertAction = UIAlertAction(title: "Done", style: .Default, handler: nil)
-                            alert.addAction(alertAction)
+                            let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
+                            
+                            let saveAction = UIAlertAction(title: "Save Score", style: .Default, handler: { (UIAlertAction) in
+                                self.performSegueWithIdentifier("saveScoreSegue", sender: self)
+                            })
+                            
+                            alert.addAction(dismissAction)
+                            alert.addAction(saveAction)
+                            
                             presentViewController(alert, animated: true, completion: nil)
                         }
                     }
@@ -393,6 +416,24 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationNavController = segue.destinationViewController as! UINavigationController
+        let saveScoreVC = destinationNavController.topViewController as! SaveScoreViewController
+        
+        //Check the data being passed
+        print("Game time: \(gameTimerSeconds)")
+        print("Number of moves: \(numberOfMoves)")
+        
+        //Pass the data
+        //Time to completion
+        saveScoreVC.varTimeToCompletion = gameTimerSeconds
+        
+        //Number of Moves
+        saveScoreVC.varNumberOfMoves = numberOfMoves
+        
+        
+        print("Segue working")
+    }
     
     //Function that sets up every image
     func setUpImages() -> [UIImage] {
@@ -422,7 +463,7 @@ class GameViewController: UIViewController {
         //Check against the devide and set the proper array of data that the app will end up using
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad) {
             
-            print("Ipad")
+            //print("Ipad")
             
             //FOR IPAD
             let punkd = UIImage(named: "Punkd")
@@ -446,7 +487,7 @@ class GameViewController: UIViewController {
         //Check against the devide and set the proper array of data that the app will end up using
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
             
-            print("Iphone")
+            //print("Iphone")
             
             //Optional biding
             if let alien = alien, classy = classy, crashDummy = crashDummy, eatDust = eatDust, flynHigh = flynHigh, freeFlying = freeFlying, heyZeus = heyZeus, lionTamer = lionTamer, looseChange = looseChange, nappn = nappn {
